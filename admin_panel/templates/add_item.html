@@ -1,0 +1,108 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+
+<div id="all">
+
+    <div style="display: none" id="bg-color">
+</div>
+
+    <div id="popup-delete-category" class="delete-confirm-box" style="display: none;">
+        <div onclick="disappear_delete_cat_confirm_box()" class="close-btn"><span class="close-font">&times;</span></div>
+        <div class="popup-content">
+        <span class="confirm-message">با حذف این دسته تمامی غذاهای موجود در آن نیز حذف می شوند. از حذف این دسته مطمئن هستید؟</span>
+        </div>
+        <button onclick="delete_category_forever('{% url 'delete_category_forever' 1%}')" type="button" class="popup-button delete-confirm-button">حذف کن</button>
+        <button onclick="disappear_delete_cat_confirm_box()" type="button" class="popup-button cancel-button">انصراف</button>
+
+    </div>
+
+
+
+
+
+    <div id="show-error" style="display: none" class="show-error">
+    <span class="error">لطفا خطاهایی که با رنگ قرمز مشخص شده اند را برطرف کنید.</span>
+    </div>
+    <div class="food-header">
+        <span class="header">افزودن غذا</span>
+    </div>
+
+    <form name="add_food_form" method="post" enctype="multipart/form-data" onsubmit="return form_validation();" novalidate>
+        {% csrf_token %}
+    <div class="row">
+    <label class="label-text">نام </label><span>* :</span>
+        <input onkeyup="show_or_hide_error(this, 'food-name-error', false)" name="food_name" type="text" class="input name-input" /><br />
+        <span style="display: none" id="food-name-error" class="error margin-right">* لطفا نام غذا را وارد کنید.</span>
+    </div>
+    <div class="row">
+        <label class="label-text">دسته </label><span>* :</span>
+        <select id="all-categories" onchange="show_or_hide_error(this, 'category-error', false)" name="category" class="input cat-input">
+            <option selected="selected">----------</option>
+            {% for category in categorys %}
+                <option>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    <div class="margin-icons">
+        <div class="icons">
+            <a href="{% url 'add_category' %}"><img class="fit-icons" src="{% static 'img/add.svg' %}"></a>
+        </div>
+    <div id="edit-category" class="icons opacity">
+            <a><img onclick="get_cat_info('{% url 'edit_category' 1 %}')" class="fit-icons" src="{% static 'img/edit.svg' %}"></a>
+        </div>
+    <div id="delete-category" class="icons opacity">
+            <a><img onclick="delete_category()" class="fit-icons" src="{% static 'img/delete.svg' %}"></a>
+        </div>
+    </div><br />
+    <span id="category-error" style="display: none" class="error margin-right">* لطفا دسته ای برای غذا انتخاب کنید.</span>
+    </div>
+    <div class="row">
+        <label class="label-text">قیمت </label><span>* :</span>
+        <input onkeyup="show_or_hide_error(this, 'price-error', true)" name="food_price" type="number" class="input number-input" /><br />
+        <span id="price-error" style="display: none" class="error margin-right">* لطفا قیمت صحیح را وارد کنید.</span>
+    </div>
+
+    <div class="row">
+        <label class="label-text">متوسط زمان آماده شدن(بر حسب دقیقه) : </label>
+        <input name="price" type="number" class="input number-input" /><br />
+        <span class="error" style="color: #888888">در صورت خالی بودن این فیلد، این مقدار برابر 10 دقیقه در نظر گرفته خواهد شد.</span>
+    </div>
+
+     <div class="row">
+        <label class="label-text">فرستادن به : </label>
+        <select id="food-destination" onchange="show_or_hide_error(this, 'category-error', false)" name="destination" class="input cat-input">
+            <option selected="selected">پنل آشپزخانه</option>
+            <option>پنل سرویس و مخلفات</option>
+        </select>
+     </div>
+
+    <div class="row">
+        <label class="label-text">توضیحات : </label><br />
+        <textarea name="description" class="text-area"></textarea>
+    </div>
+    <div id="all-media">
+    <div class="row">
+        <label class="label-text">انتخاب تصویر </label><span>* :</span>
+        <input name="file" type="file" class="input file-input" /><br />
+        <span id="no-selected-file-error" style="display: none" class="error margin-right">* لطفا تصویری برای غذا انتخاب کنید.(فرمت های مجاز: jpeg, jpg, png, gif)</span><br />
+        <span id="invalid-format-error" style="display: none" class="error margin-right">* فرمت تصویر انتخاب شده مجاز نیست. فرمت های مجاز: jpeg, jpg, png, gif</span>
+    </div>
+        </div>
+    <div class="pos-btn-add-media">
+        <button onclick="add_media();" class="btn-add-media" type="button">افزودن تصویر</button>
+    </div>
+
+    <div class="row background">
+        <button type="submit" class="btn btn-add">
+            <span>افزودن</span>
+        </button>
+        <a class="decoration" href="{% url 'all_foods' %}"><button type="button"  class="btn btn-cancel">
+            <span>بازگشت</span>
+    </button></a>
+    </div>
+    </form>
+
+</div>
+{% endblock content %}
+

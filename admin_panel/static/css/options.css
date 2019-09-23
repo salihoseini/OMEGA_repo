@@ -1,0 +1,13 @@
+.options-half{
+    width: 49%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+#pos-options{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}

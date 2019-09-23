@@ -1,0 +1,111 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/services_main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/services_invoice.css' %}" type="text/css">
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/services.js' %}"></script>
+    <title>پنل سرویس و مخلفات</title>
+</head>
+<body>
+
+    <div class="pos-nav">
+    <div class="topnav" id="myTopnav">
+        <a href="#"></a>
+        <a href="{% url 'admin-logout' %}">خروج</a>
+        <a href="#">تغییر رمز عبور</a>
+        <a style="float: left; background-color: #fbfbfb;color: #21ba45;" href="#">پنل سرویس و مخلفات</a>
+    </div>
+    </div>
+
+
+    <div class="admin-content-section">
+
+    <!-- Food management box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>سفارشات ثبت شده</span>
+                {% if order_exist %}
+                <span id="orders-num" class="num-order">{{ num_orders }}</span>
+                {% else %}
+                <span id="orders-num" class="num-order">0</span>
+                {% endif %}
+            </div>
+            <div class="admin-container-content">
+
+               <!-- <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">خلاصه سفارش</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">وضعیت</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">تایید/رد کردن</span>
+                    </div>
+                </div> -->
+
+                <div id="show-order-details">
+                {% if order_exist %}
+                        {% for order in orders %}
+                            <div id="pos-order{{ order.order_id }}" class="order">
+                            <span style="display: none;" id="user-id{{ order.order_id }}">{{ order.user_id }}</span>
+                            <table class="invoice-table table-header" style="background-color: #21ba45; color: white">
+                                <tr onclick="confirm_services('{{ order.order_id }}')" style="position: relative">
+                                    <th>تایید سفارش</th>
+                                </tr>
+                            </table>
+                        <table class="invoice-table">
+                            <tr>
+                                <th>شماره فاکتور</th>
+                                <th>شماره میز</th>
+                                <th>تاریخ ثبت سفارش</th>
+                            </tr>
+                        <tr>
+                        <td>{{ order.order_id }}</td>
+                        <td>{{ order.table_number }}</td>
+                        <td>
+                            <span>{{ order.date.j_day }}</span>
+                            <span>،</span>
+                            <span>{{ order.date.day }}</span>
+                            <span>{{ order.date.month }}</span>
+                            <span>{{ order.date.year }}</span><br />
+                            <span>ساعت </span>
+                            <span>{{ order.time }}</span>
+                        </td>
+                        </tr>
+                        </table>
+                         <table class="invoice-table">
+                            <tr>
+                                <th>نام غذا</th>
+                                <th>تعداد</th>
+                            </tr>
+                            {% for item in order.foods %}
+                                {% if not item.destination %}
+                                <tr>
+                                <td>{{ item.food_name }}</td>
+                                <td>{{ item.num_food }}</td>
+                            </tr>
+                                {% endif %}
+                            {% endfor %}
+                         </table>
+                            <table class="invoice-table">
+                                <tr>
+                                <td>یادداشت مشتری</td>
+                                    <td>{{ order.note }}</td>
+                                </tr>
+                            </table>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="321364ca-e1c4-434a-b3a7-df6e367b019e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin_panel/templates/all_orders.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/omega_app/static/css/last_orders.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/omega_app/templates/last_orders.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services_panel/queries.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services_panel/templates/services.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services_panel/urls.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin_panel/static/img/add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin_panel/static/img/comments-management.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin_panel/static/img/food.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/avatar1.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/avatar1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/edit.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/edit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/garbage.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/garbage.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/recycle.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/recycle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/unblock.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/unblock.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/img/user-management.png" afterPath="$PROJECT_DIR$/admin_panel/static/img/user-management.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OMEGA/settings.py" afterPath="$PROJECT_DIR$/OMEGA/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OMEGA/urls.py" afterPath="$PROJECT_DIR$/OMEGA/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/consumers.py" afterPath="$PROJECT_DIR$/admin_panel/consumers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/models.py" afterPath="$PROJECT_DIR$/admin_panel/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/queries.py" afterPath="$PROJECT_DIR$/admin_panel/queries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/css/edit_item.css" afterPath="$PROJECT_DIR$/admin_panel/static/css/edit_item.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/css/food_management.css" afterPath="$PROJECT_DIR$/admin_panel/static/css/food_management.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/css/main.css" afterPath="$PROJECT_DIR$/admin_panel/static/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/js/admin.js" afterPath="$PROJECT_DIR$/admin_panel/static/js/admin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/static/js/ajax_call.js" afterPath="$PROJECT_DIR$/admin_panel/static/js/ajax_call.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/add_category.html" afterPath="$PROJECT_DIR$/admin_panel/templates/add_category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/add_item.html" afterPath="$PROJECT_DIR$/admin_panel/templates/add_item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/admin_authentication.html" afterPath="$PROJECT_DIR$/admin_panel/templates/admin_authentication.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/base_admin.html" afterPath="$PROJECT_DIR$/admin_panel/templates/base_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/edit_category.html" afterPath="$PROJECT_DIR$/admin_panel/templates/edit_category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/edit_food.html" afterPath="$PROJECT_DIR$/admin_panel/templates/edit_food.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/loggedIn_admin.html" afterPath="$PROJECT_DIR$/admin_panel/templates/loggedIn_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/options.html" afterPath="$PROJECT_DIR$/admin_panel/templates/options.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/templates/show_foods.html" afterPath="$PROJECT_DIR$/admin_panel/templates/show_foods.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/tests.py" afterPath="$PROJECT_DIR$/admin_panel/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/urls.py" afterPath="$PROJECT_DIR$/admin_panel/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_panel/views.py" afterPath="$PROJECT_DIR$/admin_panel/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitchen_panel/queries.py" afterPath="$PROJECT_DIR$/kitchen_panel/queries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitchen_panel/static/css/kitchen_main.css" afterPath="$PROJECT_DIR$/kitchen_panel/static/css/kitchen_main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitchen_panel/static/js/kitchen_ajax_call.js" afterPath="$PROJECT_DIR$/kitchen_panel/static/js/kitchen_ajax_call.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitchen_panel/templates/kitchen_panel.html" afterPath="$PROJECT_DIR$/kitchen_panel/templates/kitchen_panel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kitchen_panel/views.py" afterPath="$PROJECT_DIR$/kitchen_panel/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/models.py" afterPath="$PROJECT_DIR$/omega_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/queries.py" afterPath="$PROJECT_DIR$/omega_app/queries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/static/css/post_style.css" afterPath="$PROJECT_DIR$/omega_app/static/css/post_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/static/css/slider.css" afterPath="$PROJECT_DIR$/omega_app/static/css/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/static/js/main.js" afterPath="$PROJECT_DIR$/omega_app/static/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/static/js/payment.js" afterPath="$PROJECT_DIR$/omega_app/static/js/payment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/templates/base.html" afterPath="$PROJECT_DIR$/omega_app/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/templates/home.html" afterPath="$PROJECT_DIR$/omega_app/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/templates/payment.html" afterPath="$PROJECT_DIR$/omega_app/templates/payment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/templates/prepare_order.html" afterPath="$PROJECT_DIR$/omega_app/templates/prepare_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/urls.py" afterPath="$PROJECT_DIR$/omega_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omega_app/views.py" afterPath="$PROJECT_DIR$/omega_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/models.py" afterPath="$PROJECT_DIR$/users/models.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/OMEGA$test_mac.coverage" NAME="test_mac Coverage Results" MODIFIED="1561981697308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/omega_app" />
+    <SUITE FILE_PATH="coverage/OMEGA$test.coverage" NAME="test Coverage Results" MODIFIED="1563957608548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/omega_app" />
+    <SUITE FILE_PATH="coverage/OMEGA$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1566390606215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OMEGA" />
+    <SUITE FILE_PATH="coverage/OMEGA$calender.coverage" NAME="calender Coverage Results" MODIFIED="1566373714741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OMEGA" />
+    <SUITE FILE_PATH="coverage/OMEGA$tests.coverage" NAME="tests Coverage Results" MODIFIED="1566732738502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/admin_panel" />
+    <SUITE FILE_PATH="coverage/OMEGA$extractor.coverage" NAME="extractor Coverage Results" MODIFIED="1563615828530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="E:/NN_codes/INQ_implementation/final/ImageNet/Weight_extractor" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="240" column="29" lean-forward="false" selection-start-line="240" selection-start-column="29" selection-end-line="240" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <marker date="1569242346611" expanded="false" signature="9344:9363" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slider.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/omega_app/static/css/slider.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="163" column="12" lean-forward="false" selection-start-line="163" selection-start-column="12" selection-end-line="163" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/static/css/post_style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="1892" column="19" lean-forward="false" selection-start-line="1892" selection-start-column="19" selection-end-line="1892" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="806">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/queries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1395">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omega_app/static/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36518">
+              <caret line="1178" column="5" lean-forward="false" selection-start-line="1178" selection-start-column="5" selection-end-line="1178" selection-end-column="5" />
+              <folding>
+                <marker date="1569075123380" expanded="true" signature="12162:12178" ph="..." />
+                <marker date="1569075123380" expanded="true" signature="12456:12463" ph="−" />
+                <marker date="1569075123380" expanded="true" signature="12849:12855" ph="+" />
+                <marker date="1569075123380" expanded="true" signature="27835:27851" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pos-description-ico</find>
+      <find>get_onli</find>
+      <find>A</find>
+      <find>update_</find>
+      <find>status</find>
+      <find>get_kitche</find>
+      <find>order</find>
+      <find>change_order</find>
+      <find>update</find>
+      <find>get_orde</find>
+      <find>hide_order</find>
+      <find>get_order</find>
+      <find>get_prepa</find>
+      <find>hide_prepari</find>
+      <find>alert</find>
+      <find>get_ki</find>
+      <find>add_foo</find>
+      <find>get_kitchen</find>
+      <find>admin-conta</find>
+      <find>orders_info</find>
+      <find>get_prep</find>
+      <find>confirm</find>
+      <find>get_order_tim</find>
+      <find>all_foo</find>
+      <find>pos-img</find>
+      <find>post.food.id</find>
+      <find>comment_pop</find>
+      <find>bg-</find>
+      <find>add_comme</find>
+      <find>container</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/slider/index.html" />
+        <option value="$PROJECT_DIR$/admin_panel/static/css/add_item.css" />
+        <option value="$PROJECT_DIR$/omega_app/admin.py" />
+        <option value="$PROJECT_DIR$/omega_app/templates/prepare_order.html" />
+        <option value="$PROJECT_DIR$/omega_app/urls.py" />
+        <option value="$PROJECT_DIR$/omega_app/static/css/last_orders.css" />
+        <option value="$PROJECT_DIR$/omega_app/templates/last_orders.html" />
+        <option value="$PROJECT_DIR$/admin_panel/tests.py" />
+        <option value="$PROJECT_DIR$/admin_panel/static/css/food_management.css" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/show_foods.html" />
+        <option value="$PROJECT_DIR$/admin_panel/static/css/edit_item.css" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/options.html" />
+        <option value="$PROJECT_DIR$/admin_panel/static/js/ajax_call.js" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/edit_food.html" />
+        <option value="$PROJECT_DIR$/admin_panel/models.py" />
+        <option value="$PROJECT_DIR$/users/models.py" />
+        <option value="$PROJECT_DIR$/omega_app/static/js/payment.js" />
+        <option value="$PROJECT_DIR$/kitchen_panel/static/css/kitchen_main.css" />
+        <option value="$PROJECT_DIR$/omega_app/views.py" />
+        <option value="$PROJECT_DIR$/OMEGA/urls.py" />
+        <option value="$PROJECT_DIR$/OMEGA/settings.py" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/add_item.html" />
+        <option value="$PROJECT_DIR$/omega_app/templates/payment.html" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/base_admin.html" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/edit_category.html" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/admin_authentication.html" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/add_category.html" />
+        <option value="$PROJECT_DIR$/admin_panel/static/js/admin.js" />
+        <option value="$PROJECT_DIR$/omega_app/models.py" />
+        <option value="$PROJECT_DIR$/services_panel/urls.py" />
+        <option value="$PROJECT_DIR$/services_panel/queries.py" />
+        <option value="$PROJECT_DIR$/services_panel/views.py" />
+        <option value="$PROJECT_DIR$/admin_panel/consumers.py" />
+        <option value="$PROJECT_DIR$/services_panel/templates/services.html" />
+        <option value="$PROJECT_DIR$/kitchen_panel/static/js/kitchen_ajax_call.js" />
+        <option value="$PROJECT_DIR$/services_panel/static/js/services.js" />
+        <option value="$PROJECT_DIR$/admin_panel/urls.py" />
+        <option value="$PROJECT_DIR$/kitchen_panel/templates/kitchen_panel.html" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/loggedIn_admin.html" />
+        <option value="$PROJECT_DIR$/kitchen_panel/views.py" />
+        <option value="$PROJECT_DIR$/kitchen_panel/queries.py" />
+        <option value="$PROJECT_DIR$/admin_panel/queries.py" />
+        <option value="$PROJECT_DIR$/admin_panel/views.py" />
+        <option value="$PROJECT_DIR$/admin_panel/static/css/main.css" />
+        <option value="$PROJECT_DIR$/admin_panel/templates/all_orders.html" />
+        <option value="$PROJECT_DIR$/omega_app/queries.py" />
+        <option value="$PROJECT_DIR$/omega_app/static/js/main.js" />
+        <option value="$PROJECT_DIR$/omega_app/templates/base.html" />
+        <option value="$PROJECT_DIR$/omega_app/static/css/post_style.css" />
+        <option value="$PROJECT_DIR$/omega_app/templates/home.html" />
+        <option value="$PROJECT_DIR$/omega_app/static/css/slider.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="820" />
+    <option name="width" value="1110" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+              <item name="omega_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+              <item name="omega_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+              <item name="omega_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+              <item name="omega_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMEGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMEGA" type="462c0819:PsiDirectoryNode" />
+              <item name="omega_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hossein\Desktop\OMEGA\project\back\OMEGA\admin_panel\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hossein\Desktop\OMEGA\project\back\OMEGA\admin_panel\static\img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.tests">
+    <configuration name="OMEGA" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration name="calender" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OMEGA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OMEGA/calender.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="extractor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="E:/NN_codes/INQ_implementation/final/ImageNet/Weight_extractor" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:/NN_codes/INQ_implementation/final/ImageNet/Weight_extractor/extractor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OMEGA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OMEGA/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/omega_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/omega_app/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/admin_panel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMEGA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/admin_panel/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Django server.OMEGA" />
+      <item index="1" class="java.lang.String" itemvalue="Python.extractor" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.calender" />
+      <item index="5" class="java.lang.String" itemvalue="Python.tests" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.tests" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.calender" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.extractor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="321364ca-e1c4-434a-b3a7-df6e367b019e" name="Default" comment="" />
+      <created>1560176439171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560176439171</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955848" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/static/css/kitchen_main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="305" column="22" lean-forward="false" selection-start-line="305" selection-start-column="22" selection-end-line="305" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OMEGA/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OMEGA/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/templates/last_orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4278">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/templates/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/templates/prepare_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/user_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/unsuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/show_invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/show_foods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1643">
+          <caret line="53" column="56" lean-forward="false" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/options.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/edit_food.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1457">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/edit_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="59" column="9" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/comments_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/admin_panel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/admin_authentication.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/add_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/add_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/static/css/invoice.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2263">
+          <caret line="73" column="1" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/static/js/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2945">
+          <caret line="95" column="20" lean-forward="false" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/static/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="329" column="1" lean-forward="true" selection-start-line="329" selection-start-column="1" selection-end-line="329" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="5" column="66" lean-forward="false" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/static/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="232" column="60" lean-forward="true" selection-start-line="232" selection-start-column="60" selection-end-line="232" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/templates/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services_panel/queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/consumers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="396" column="0" lean-forward="false" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/static/js/kitchen_ajax_call.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="220" column="8" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/base_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="279" column="102" lean-forward="true" selection-start-line="279" selection-start-column="102" selection-end-line="279" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="392" column="36" lean-forward="true" selection-start-line="392" selection-start-column="36" selection-end-line="392" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/loggedIn_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="152" column="85" lean-forward="false" selection-start-line="152" selection-start-column="85" selection-end-line="152" selection-end-column="85" />
+          <folding>
+            <element signature="e#6960#6979#0#HTML" expanded="false" />
+            <element signature="e#7034#7110#0#HTML" expanded="false" />
+            <element signature="e#7152#7178#0#HTML" expanded="false" />
+            <element signature="e#7620#7645#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/templates/all_orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="62" column="62" lean-forward="false" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
+          <folding>
+            <element signature="e#156#248#0#HTML" expanded="false" />
+            <element signature="e#827#908#0#HTML" expanded="false" />
+            <element signature="e#2988#3015#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/static/css/kitchen_invoice.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="82" column="1" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="82" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="455" column="20" lean-forward="false" selection-start-line="455" selection-start-column="20" selection-end-line="455" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen_panel/templates/kitchen_panel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="232" column="36" lean-forward="true" selection-start-line="222" selection-start-column="28" selection-end-line="232" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36518">
+          <caret line="1178" column="5" lean-forward="false" selection-start-line="1178" selection-start-column="5" selection-end-line="1178" selection-end-column="5" />
+          <folding>
+            <marker date="1569075123380" expanded="true" signature="12162:12178" ph="..." />
+            <marker date="1569075123380" expanded="true" signature="12456:12463" ph="−" />
+            <marker date="1569075123380" expanded="true" signature="12849:12855" ph="+" />
+            <marker date="1569075123380" expanded="true" signature="27835:27851" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/static/css/post_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="1892" column="19" lean-forward="false" selection-start-line="1892" selection-start-column="19" selection-end-line="1892" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="240" column="29" lean-forward="false" selection-start-line="240" selection-start-column="29" selection-end-line="240" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <marker date="1569242346611" expanded="false" signature="9344:9363" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omega_app/static/css/slider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="163" column="12" lean-forward="false" selection-start-line="163" selection-start-column="12" selection-end-line="163" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

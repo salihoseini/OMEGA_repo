@@ -1,0 +1,228 @@
+.content{
+    width: 90%;
+    height: auto;
+ /*   border: 1px solid red;*/
+    margin: 80px auto;
+    direction: rtl;
+}
+.half{
+    width: 47%;
+    display: inline-block;
+    height: 650px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    padding: 1%;
+    position: relative;
+    border-radius: 10px;
+    direction: ltr;
+}
+
+.delete-picture{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 9%;
+    top: -15px;
+    background-color: #333333;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.delete-picture span{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.fit-img{
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+}
+.edit-name-input{
+    width: 70%;
+    padding-right: 10px;
+}
+.back{
+    background-color: white;
+}
+.edit-number-input{
+    width: 60%;
+    padding-right: 10px;
+}
+.edit-text-area{
+    width: 80%;
+    height: 200px;
+    direction: rtl;
+    text-align: right;
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 2%;
+    resize: none;
+}
+.edit-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+}
+.edit-cat-input{
+    width: 50%;
+    padding-right: 10px;
+}
+.pos-img{
+    width: 75%;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+.margin-top{
+    margin-top: 20px;
+}
+
+.block{
+    height: 40px;
+    float: right;
+}
+.pos-comment{
+    width: 100%;
+    height: auto;
+    min-height: 20px;
+    position: relative;
+    /*background-color: #FF8E3120;*/
+    border-bottom: 1px dashed #333333;
+    border-radius: 8px;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    /*background-color: #21ba4515;*/
+    /*border: 1px solid blue;*/
+   /* border: 2px dashed #333333;*/
+  /*  padding-bottom: 10px;*/
+    margin-top: 5px;
+}
+
+.pos-info{
+    width: 98%;
+    height: 50px;
+    /*border: 1px solid red;*/
+    /*border-bottom: 2px solid #33333350;*/
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.avatar-block{
+    width: 40px;
+}
+.name-block{
+    width: 60%;
+    /*border: 1px solid rebeccapurple;*/
+    text-align: right;
+    direction: rtl;
+    padding-right: 10px;
+}
+.info-text{
+    font-family: IranSans;
+    color: #333333;
+    line-height: 40px;
+}
+.date-block{
+    width: 20%;
+    /*border: 1px solid green;*/
+    float: left;
+    text-align: center;
+}
+
+.fit-avatar{
+    box-sizing: border-box;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+.circle{
+    border-radius: 50%;
+}
+.name-font{
+    font-size: 18px;
+    font-weight: bold;
+}
+.date-font{
+    font-size: 16px;
+}
+.comment-content{
+    width: 95%;
+    height: auto;
+    padding: 1%;
+    text-align: right;
+    direction: rtl;
+    /*border: 1px solid red;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+.comment-content .date{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    color: #333333;
+}
+.time{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 12px;
+    color: #888888;
+    direction: rtl;
+}
+
+.empty-comment{
+    width: 20%;
+    height: auto;
+    min-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    direction: rtl;
+    /*border: 1px solid red;*/
+}
+.empty-comment span{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333333;
+    direction: rtl;
+}
+
+.garbage-img{
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.comment-info{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333333;
+    direction: rtl;
+}
+.all-comments{
+    width: 80%;
+    max-height: 400px;
+    overflow-y: scroll;
+    /*border: 1px solid red;*/
+    direction: ltr;
+    text-align: right;
+}

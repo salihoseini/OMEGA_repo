@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/add_category.css' %}" type="text/css">
+    <script rel="script" type="text/javascript" src="{% static 'js/admin.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <title>title</title>
+</head>
+<body>
+<div id="all">
+
+    <div class="food-header">
+        <span class="header">ویرایش دسته</span>
+    </div>
+
+    <form name="edit-cat-form" method="post" enctype="multipart/form-data" onsubmit="return cat_edit_form_validation();" novalidate>
+        {% csrf_token %}
+    <div class="row">
+    <label class="label-text">نام </label><span>* :</span>
+        <input onkeyup="show_or_hide_error(this, 'cat-name-error', false)" name="cat_name" type="text" class="input name-input" value="{{ category.name }}" />
+        <span style="display: none" id="cat-name-error" class="error margin-right">* لطفا نام دسته را وارد کنید.</span>
+    </div>
+        <div class="pos-img">
+            <img class="img-style" src="{{ category.picture.url }}">
+        </div>
+    <div class="row">
+        <label class="label-text">انتخاب تصویر: </label>
+        <input id="file" name="file" type="file" class="input file-input" />
+        <span id="invalid-format-error" style="display: none" class="error margin-right">* فرمت تصویر انتخاب شده مجاز نیست. فرمت های مجاز: jpeg, jpg, png, gif</span>
+    </div>
+        <input name="cat_id" type="hidden" value="{{ category.id }}">
+
+    <div class="row background">
+        <button type="submit" class="btn btn-add">
+            <span>ویرایش</span>
+        </button>
+        <a href="{% url 'add_food' %}"><button type="button"  class="btn btn-cancel">
+            <span>انصراف</span>
+    </button></a>
+    </div>
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance !== "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+</script>
+</body>
+</html>

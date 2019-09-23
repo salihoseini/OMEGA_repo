@@ -1,0 +1,75 @@
+
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <title>add item</title>
+    <link rel="stylesheet" href="{% static 'css/add_item.css' %}" type="text/css">
+</head>
+
+<body>
+<div id="all">
+
+    <div class="row">
+        <span class="header">افزودن غذا</span>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="row">
+    <label class="label-text">نام : </label>
+        <input name="food_name" type="text" class="input name-input" />
+    </div>
+    <div class="row">
+        <label class="label-text">دسته : </label>
+        <select name="category" class="input cat-input">
+            <option selected="selected">----------</option>
+            {% for category in categorys %}
+                <option>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    <div class="margin-icons">
+        <div class="icons">
+            <a><img class="fit-icons" src="{% static 'img/add.svg' %}"></a>
+        </div>
+    <div class="icons opacity">
+            <a><img class="fit-icons" src="{% static 'img/edit.svg' %}"></a>
+        </div>
+    <div class="icons opacity">
+            <a><img class="fit-icons" src="{% static 'img/delete.svg' %}"></a>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <label class="label-text">قیمت : </label>
+        <input name="price" type="number" class="input number-input" />
+    </div>
+
+    <div class="row">
+        <label class="label-text">توضیحات : </label><br />
+        <textarea name="description" class="text-area"></textarea>
+    </div>
+
+    <div class="row">
+        <label class="label-text">انتخاب تصویر : </label>
+        <input name="file" type="file" class="input file-input" />
+    </div>
+
+    <div class="row">
+        <button type="submit" class="btn btn-add">
+            <span>افزودن</span>
+        </button>
+        <button class="btn btn-cancel">
+            <span>بازگشت</span>
+        </button>
+    </div>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>
+

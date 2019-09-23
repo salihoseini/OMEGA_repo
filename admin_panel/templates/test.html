@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/admin.js' %}"></script>
+</head>
+<body>
+
+<center><h1>{{ name }}</h1></center>
+
+<form method="post" class="form-ajax" id="test">
+    {% csrf_token %}
+    <button onclick="open_window()" type="button">test</button>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+           var form = $("#test");
+           form.submit(function (event) {
+               event.preventDefault();
+               var this_form = $(this);
+               var action = "{% url 'delete_item' %}";
+               var method = this_form.attr("method");
+               var data = this_form.serialize();
+
+               $.ajax({
+                   url : action ,
+                   method : method ,
+                   data : data ,
+                   success: function (data) {
+                       alert(data);
+                   } ,
+                   error:function () {
+                       alert("Ooooops");
+                   }
+               })
+
+           })
+
+       });
+
+
+function open_window() {
+    var params = 'width=500, height=500, scrollbars=no,resizable=no,status=no,location=center,toolbar=no,menubar=no,left=400,top=400';
+    window.open('https://www.google.com/', 'test', params);
+}
+</script>
+</body>
+</html>

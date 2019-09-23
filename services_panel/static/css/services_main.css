@@ -1,0 +1,308 @@
+
+@font-face {
+    font-family: "Bnazanin";
+    src: url("../fonts/Bnazanin/Bnazanin.ttf");
+    src:
+            url("../fonts/Bnazanin/Bnazanin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/BRoya/BRoya.eot') format('eot'),
+    url('../fonts/IranSans/BRoya/BRoya.woff') format('woff'),
+    url('../fonts/IranSans/BRoya/BRoya.ttf') format('truetype');
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+
+.nav-header{
+    width: 98%;
+    height: 40px;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: #21ba45;
+    direction: rtl;
+    text-align: right;
+}
+.link{
+    background-color: #fbfbfb;
+}
+
+.pos-nav {
+    /*width: 1120px;*/
+    width: 90%;
+    height: auto;
+    min-height: 20px;
+    background-color: rgba(5, 33, 158, 0.81);
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 5%;
+    padding-left: 5%;
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+}
+
+
+.topnav {
+    overflow: hidden;
+  /*  background-color: #333;*/
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 20px;
+}
+.topnav a:hover{
+    background-color: #0087be;
+}
+/*
+.admin-content-section{
+    width: 94%;
+    padding: 3%;
+    position: relative;
+    margin-top: 20px;
+  /*  border: 1px  solid red;*/
+ /*   height: auto;
+    direction: rtl;
+    text-align: right;
+}*/
+
+
+
+.admin-container{
+    width: 60%;
+    /*margin-top: 20px;*/
+    height: auto;
+    min-height: 60px;
+   /* border: 1px solid green;*/
+    background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 0 2px 4px 0 #888888;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    direction: rtl;
+    text-align: right;
+
+}
+.admin-container-header{
+    width: 94%;
+    height: 40px;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #13068f;
+    text-align: right;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.admin-container-header span{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    color: white;
+    line-height: 40px;
+}
+.admin-container-content{
+    width: 96%;
+    padding-right: 2%;
+    padding-left: 2%;
+    max-height: 400px;
+    overflow-y: scroll;
+    direction: ltr;
+}
+.admin-container-content .item{
+    width: 98%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #888888;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+
+}
+
+.order-item{
+    width: 98%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #888888;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+}
+
+.decoration{
+    text-decoration: none;
+}
+.item-text{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0087be;
+    line-height: 40px;
+}
+
+
+.user{
+    display: inline-block;
+    direction: rtl;
+   /* border: 1px solid red;*/
+    height: 40px;
+    position: absolute;
+}
+.name{
+    width: 55%;
+    right: 0;
+    text-align: right;
+}
+.status{
+    width: 20%;
+    right: 55%;
+    text-align: center;
+
+}
+.block-user{
+    width: 20%;
+    text-align: center;
+    direction: rtl;
+    right: 80%;
+    line-height: 40px;
+}
+.user-name-text{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    color: #333333;
+    line-height: 40px;
+}
+.user-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+}
+.margin-right{
+    margin-right: 48px;
+}
+
+.admin-container-content .user-item{
+    width: 98%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #888888;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+
+}
+
+.reject-icon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.accept-icon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.fit-icon{
+    width: 25px;
+    height: 25px;
+}
+.fit-icons{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.add-margin-right{
+    margin-right: 20px;
+}
+.confirm-margin-right{
+    margin-right: 60px;
+}
+
+@keyframes delete-animation {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+.delete-anim{
+    -webkit-animation: delete-animation 0.9s ease-in-out 1;
+    -o-animation: delete-animation 0.9s ease-in-out 1;
+    animation: delete-animation 0.9s ease-in-out 1;
+}
+
+.order{
+    margin-bottom: 50px;
+    margin-top: 30px;
+    border-bottom: 2px solid #333333;
+}
+.table-header{
+    background-color: #21ba45;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    color: white;
+}
+.table-header:hover{
+    background-color: #f8f8f8;
+    border: 1px solid #21ba45;
+    color: #21ba45;
+}
+.num-order{
+    width: 30px;
+    height: 30px;
+    background-color: #FF8E31;
+    color: white;
+    position: absolute;
+    text-align: center;
+    left: 10px;
+}

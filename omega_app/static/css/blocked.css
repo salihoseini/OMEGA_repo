@@ -1,0 +1,73 @@
+
+@font-face {
+    font-family: "Bnazanin";
+    src: url("../fonts/Bnazanin/Bnazanin.ttf");
+    src:
+            url("../fonts/Bnazanin/Bnazanin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/BRoya/BRoya.eot') format('eot'),
+    url('../fonts/IranSans/BRoya/BRoya.woff') format('woff'),
+    url('../fonts/IranSans/BRoya/BRoya.ttf') format('truetype');
+    font-style:normal;
+    font-weight:normal;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #888888;
+}
+
+.pos-message{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*border: 1px solid red;*/
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    direction: rtl;
+}
+.pos-message span{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 34px;
+    color: #333333;
+}
+
+.img{
+    width: 100px;
+    height: 100px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .pos-message{
+        width: 60%;
+        height: 40%;
+    }
+
+}
+@media screen and (max-width: 600px){
+    .pos-message{
+        width: 90%;
+        height: 40%;
+    }
+}
+@media screen and (max-width: 380px){
+    .pos-message{
+        height: 50%;
+    }
+
+}

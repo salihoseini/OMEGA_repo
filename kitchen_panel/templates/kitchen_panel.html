@@ -1,0 +1,300 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/kitchen_main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/kitchen_invoice.css' %}" type="text/css">
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/kitchen_ajax_call.js' %}"></script>
+    <title>پنل آشپزخانه</title>
+</head>
+<body>
+
+    <div class="pos-nav">
+    <div class="topnav" id="myTopnav">
+        <a href="#"></a>
+        <a href="{% url 'admin-logout' %}">خروج</a>
+        <a href="#">تغییر رمز عبور</a>
+        <a style="float: left; background-color: #fbfbfb;color: #21ba45;" href="#">پنل آشپزخانه</a>
+    </div>
+    </div>
+
+
+    <!-- Food management box -->
+
+    <!--    <div class="admin-container">
+            <div class="admin-container-header">
+                <span>سفارشات تایید شده توسط مدیریت</span>
+                <span id="orders-num" class="num-order">{{ num_orders }}</span>
+            </div>
+            <div class="admin-container-content">   -->
+
+               <!-- <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">خلاصه سفارش</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">وضعیت</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">تایید/رد کردن</span>
+                    </div>
+                </div> -->
+
+    <!--
+                <div id="all-orders">
+                {% if order_exist %}
+                    {% for order in orders %}
+
+                    <div id="pos-order{{ order.id }}" class="order">
+                            <table  class="invoice-table table-header">
+                                <tr style="position: relative">
+                                    <th id="order{{ order.id }}">تایید سفارش</th>
+                                </tr>
+                            </table>
+                         <table class="invoice-table">
+                            <tr>
+                                <th>نام غذا</th>
+                                <th>تعداد</th>
+                            </tr>
+                            {% for item in order.product.all %}
+                                {% if item.food.destination %}
+                                <tr>
+                                <td>{{ item.food }}</td>
+                                <td>{{ item.num_food }}</td>
+                            </tr>
+                                {% endif %}
+                            {% endfor %}
+                         </table>
+                    <table class="invoice-table">
+                        <tr>
+                            <td>یادداشت مشتری</td>
+                            <td>{{ order.note }}</td>
+                        </tr>
+                    </table>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+-->
+
+
+
+
+
+
+
+
+
+                   <!--     <div id="pos-order{{ order.order_id }}" class="order-item" style="direction: rtl">
+                                <div class="user name">
+                                <span class="user-name-text">میز شماره</span>
+                                <span class="user-name-text" style="color: #0D47A1; font-weight: bold">10</span>
+                                <span class="user-name-text" style="font-weight:bold;font-size: 24px">،</span>
+                                <span class="user-name-text total_price">{{ order.total_price }}</span>
+                                <span class="user-name-text">تومان</span>
+                                <span class="user-name-text" style="font-weight: bold;font-size: 24px">،</span>
+                                <a class="decoration" href="#"><span class="item-text">مشاهده جزییات</span></a>
+                                </div>
+                                <div class="reject-icon">
+                                    <input type="image" class="fit-icon" name="delete" value="delete" src="../static/img/delete.svg">
+                                </div>
+                                <div class="user status">
+                                    <span class="user-name-text user-status">پرداخت شده</span>
+                                </div>
+                               <div class="accept-icon">
+                                    <input id="order{{ order.order_id }}" type="image" class="fit-icon" name="delete" value="delete" src="../static/img/unblock.png">
+                                </div>
+                                </div>
+
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+<!-------------------------------------------------------------------------------------->
+        <!-- online users box -->
+<!--
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>کاربران آنلاین</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">نام کاربر</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">در حال انجام...</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">مسدود کردن</span>
+                    </div>
+                </div>
+
+
+                <div id="all-online-users">
+                    <div style="display: none;">
+                        <img class="user-avatar" src="{% static 'img/avatar1.png' %}">
+                        <input type="image" class="fit-icon" name="delete" value="delete" src="{% static 'img/delete.svg' %}">
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+-->
+    <!---------------------------------------------------------------------------------------->
+      <!-- order box -->
+<!--
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>سفارشات</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">خلاصه سفارش</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">وضعیت</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">تایید/رد کردن</span>
+                    </div>
+                </div>
+                <div id="all-orders">
+
+               <!-- <div class="order-item" style="direction: rtl">
+                    <div class="user name">
+                    <span class="user-name-text">میز شماره</span>
+                    <span class="user-name-text" style="color: #0D47A1; font-weight: bold">10</span>
+                    <span class="user-name-text" style="font-weight: bold;font-size: 24px ">،</span>
+                    <span class="user-name-text">240000</span>
+                    <span class="user-name-text">تومان</span>
+                    <span class="user-name-text" style="font-weight: bold;font-size: 24px ">،</span>
+                    <a class="decoration" href="{% url 'show_invoice' '1' %}"><span class="item-text">مشاهده جزییات</span></a>
+                    </div>
+                    <div class="reject-icon">
+                        <input type="image" class="fit-icon" name="delete" value="delete" src="{% static 'img/delete.svg' %}">
+                    </div>
+                    <div class="user status">
+                        <span class="user-name-text user-status">پرداخت شده</span>
+                    </div>
+                    <div class="accept-icon">
+                        <input type="image" class="fit-icon" name="delete" value="delete" src="{% static 'img/unblock.png' %}">
+                    </div>
+
+                    </div> -->
+
+<!--
+                </div>
+
+
+            </div>
+        </div>
+
+        -->
+ <div class="admin-content-section">
+
+    <!-- Food management box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>سفارشات ثبت شده</span>
+                <span id="preparing-orders-num" class="num-order">{{ num_preparing_orders }}</span>
+            </div>
+            <div class="admin-container-content">
+                <div id="show-order-details">
+                    {% if preparing_order %}
+                        {% for order in preparing_orders %}
+                            <div id="preparing-order{{ order.order_id }}" class="order">
+                            <span style="display: none;" id="user-id{{ order.order_id }}">{{ order.user_id }}</span>
+                            <table class="invoice-table" style="background-color: #0D47A1; color: white">
+                                <tr style="position: relative">
+                                    <th><span>زمان باقیمانده تا آماده شدن سفارش : </span>
+                                        <span>{{ order.remaining_time }}</span>
+                                        <span>دقیقه</span>
+
+                                        <img src="{% static 'img/add.png' %}" class="fit-icons add-margin-right">
+                                        <img id="complete-order{{ order.order_id }}" src="{% static 'img/unblock.png' %}" class="fit-icons confirm-margin-right">
+                                    </th>
+                                </tr>
+                            </table>
+                        <table class="invoice-table">
+                            <tr>
+                                <th>شماره فاکتور</th>
+                                <th>شماره میز</th>
+                                <th>تاریخ ثبت سفارش</th>
+                            </tr>
+                        <tr>
+                        <td>{{ order.order_id }}</td>
+                        <td>{{ order.table_number }}</td>
+                        <td>
+                            <span>{{ order.date.j_day }}</span>
+                            <span>،</span>
+                            <span>{{ order.date.day }}</span>
+                            <span>{{ order.date.month }}</span>
+                            <span>{{ order.date.year }}</span><br />
+                            <span>ساعت </span>
+                            <span>{{ order.time }}</span>
+                        </td>
+                        </tr>
+                        </table>
+                         <table class="invoice-table">
+                            <tr>
+                                <th>نام غذا</th>
+                                <th>تعداد</th>
+                            </tr>
+                            {% for item in order.foods %}
+                                {% if item.destination %}
+                                <tr>
+                                <td>{{ item.food_name }}</td>
+                                <td>{{ item.num_food }}</td>
+                            </tr>
+                                {% endif %}
+                            {% endfor %}
+                         </table>
+                            <table class="invoice-table">
+                                <tr>
+                                <td>یادداشت مشتری</td>
+                                    <td>{{ order.note }}</td>
+                                </tr>
+                            </table>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+
+    </div>
+            </div>
+ </div>
+
+
+
+
+<script type="text/javascript">
+    window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance !== "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+</script>
+
+</body>
+</html>

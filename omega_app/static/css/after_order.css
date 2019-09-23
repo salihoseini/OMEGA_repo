@@ -1,0 +1,171 @@
+
+.screen{
+    width: 768px;
+    height: auto;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    min-height: 700px;
+
+}
+
+.pos-timer{
+    width: 500px;
+    height: auto;
+    padding: 1%;
+    position: relative;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    direction: rtl;
+    text-align: center;
+    background-color: #0D47A1;
+    border-radius: 10px;
+}
+
+.order-info{
+    width: 90%;
+    direction: rtl;
+    margin-right: auto;
+    margin-left: auto;
+}
+.order-info-text{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 28px;
+    color: whitesmoke;
+    line-height: 40px;
+}
+
+.pos-comment-form{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    padding: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    direction: rtl;
+    background-color: #0087be;
+    border-radius: 10px;
+}
+select{
+    width: 92%;
+    text-align: center;
+    direction: rtl;
+    height: 40px;
+    border-radius: 5px;
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #0087be;
+
+}
+select:hover, input:hover, textarea:hover{
+    border: 1px solid #FF8E31;
+}
+
+input{
+    width: 90%;
+    height: 40px;
+    text-align: right;
+    direction: rtl;
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 1%;
+    border: 1px solid #0087be;
+
+}
+
+textarea{
+    width: 90%;
+    height: 150px;
+    resize: none;
+    text-align: right;
+    direction: rtl;
+    padding: 1%;
+    border-radius: 5px;
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    border: 1px solid #0087be;
+}
+
+.comment-btn{
+    width: 120px;
+    height: 40px;
+    background-color: #21ba45;
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 14px;
+    border: 1px solid #21ba45;
+    border-radius: 3px;
+    color: white;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.comment-btn:hover{
+    background-color: white;
+    color: #21ba45;
+    border: 1px solid #21ba45;
+}
+
+.link-text{
+    font-family: IranSans;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    font-size: 22px;
+    line-height: 40px;
+}
+.pos-link{
+    text-align: center;
+}
+.inform-comment{
+    font-family: IranSans;
+    font-weight: normal;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+
+.error{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
+}
+@media screen and (max-width: 768px){
+  .screen{
+      width: 99%;
+  }
+    .pos-timer{
+        width: 95%;
+    }
+  .pos-comment-form{
+      width: 95%;
+  }
+}
+@media screen and (max-width: 610px){
+
+}
+
+@media screen and (max-width: 480px){
+
+}
+
+@media screen and (max-width: 380px) {
+
+}

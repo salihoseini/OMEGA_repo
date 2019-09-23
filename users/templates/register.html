@@ -1,0 +1,42 @@
+{% extends "user_base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="content-section">
+    <form method="post">
+        {% csrf_token %}
+        <div class="pos-icon">
+            <img class="fit-icon circle" src="{% static 'img/avatar1.png' %}" alt="register-logo" />
+        </div>
+         <div class="row">
+             <div class="title-section">
+                 <div class="title-section-2">
+            <span>فرم ثبت نام</span>
+                     </div>
+                 </div>
+        </div>
+        <div class="content">
+        <div class="row">
+        <input class="input-style" type="text" name="username" placeholder="نام کاربری..." />
+            </div>
+
+         <div class="row">
+        <input class="input-style" type="email" name="email" placeholder="آدرس ایمیل..." />
+            </div>
+        <div class="row">
+        <input class="input-style" type="password" name="password" placeholder="رمز عبور..." />
+            </div>
+        <div class="row">
+        <input class="input-style" type="password" name="conf-password" placeholder="تکرار رمز عبور..." />
+            </div>
+        <div class="pos-btn">
+        <button type="submit" class="submit-btn" name="submitBtn">ثبت نام</button>
+        </div>
+            </div>
+      <!--  <div class="row">
+            {{ form.as_p }}
+        </div>-->
+    </form>
+    </div>
+{% endblock content %}

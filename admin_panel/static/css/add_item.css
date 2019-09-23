@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/BRoya/BRoya.eot') format('eot'),
+    url('../fonts/IranSans/BRoya/BRoya.woff') format('woff'),
+    url('../fonts/IranSans/BRoya/BRoya.ttf') format('truetype');
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.header{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    line-height: 60px;
+}
+
+#all{
+    width: 80%;
+    height: auto;
+    min-height: 200px;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 2.5%;
+}
+
+.row{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    height: auto;
+    min-height: 40px;
+    border-bottom: 1px solid #88888825;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: right;
+    direction: rtl;
+    position: relative;
+}
+
+.background{
+    background-color: #21ba4525;
+}
+
+.row-center{
+    text-align: center;
+}
+.label-text{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 22px;
+}
+.margin-left{
+    margin-left: 40px;
+}
+.input{
+    height: 40px;
+
+    direction: rtl;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: IranSans;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 18px;
+}
+.name-input{
+    width: 40%;
+    text-align: right;
+}
+.cat-input{
+    width: 20%;
+    text-align: center;
+}
+.number-input{
+    width: 15%;
+    font-size: 20px;
+}
+
+.text-area{
+    width: 50%;
+    height: 200px;
+    direction: rtl;
+    text-align: right;
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 1%;
+    resize: none;
+}
+.file-input{
+    font-family: Tahoma;
+    font-weight: normal;
+}
+
+.btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 3px;
+   /* position: absolute;*/
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.btn span{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+}
+.btn-add{
+    background-color: #21ba45;
+    color: white;
+    right: 20px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel{
+    background-color: red;
+    color: white;
+    right: 110px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+.btn-add:hover{
+    background-color: white;
+    color: #21ba45;
+    border: 1px solid #21ba45;
+}
+.fit-icons{
+    width: 15px;
+    height: 15px;
+}
+.icons{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline;
+}
+.margin-icons{
+    display: inline;
+    margin-right: 20px;
+}
+
+.opacity{
+    opacity: 0.6;
+    cursor: auto;
+}
+
+.error{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}
+.margin-right{
+    margin-right: 100px;
+}
+
+.pos-input-error{
+    float: right;
+}
+
+.show-error{
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.pos-btn-add-media{
+    width: 96%;
+    height: 40px;
+    direction: rtl;
+    text-align: right;
+    padding: 2%;
+}
+.btn-add-media{
+    width: 150px;
+    height: 40px;
+    background-color: #FF8E31;
+    border-radius: 3px;
+    border: 1px solid #FF8E31;
+    color: white;
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-add-media:hover{
+    background-color: white;
+    color: #FF8E31;
+}
+
+
+@media screen and (max-width: 800px){
+    #all{
+        width: 90%;
+    }
+    .name-input{
+        width: 80%;
+    }
+    .cat-input{
+        width: 30%;
+    }
+    .number-input{
+        width: 25%;
+    }
+    .text-area{
+        width: 80%;
+    }
+
+}

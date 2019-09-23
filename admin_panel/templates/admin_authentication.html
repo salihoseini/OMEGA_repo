@@ -1,0 +1,51 @@
+{% load static %}
+{% load filters %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <title>admin | login</title>
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="header">
+        <span class="header-text">ورود به پنل مدیریت</span>
+    </div>
+        <form method="post">
+            {% csrf_token %}
+        <div class="content-section">
+        <div class="row">
+            <span class="label">نام کاربری : </span><br />
+            {{ form.username|add_class:'input-style' }}
+        </div>
+    <div class="row">
+            <span class="label">رمز عبور : </span><br />
+           {{ form.password|add_class:'input-style' }}
+        </div>
+    <div class="row">
+           <div class="pos-btn">
+               <button type="submit" class="btn">ورود</button>
+           </div>
+        </div>
+            </div>
+            </form>
+    </div>
+
+<script type="text/javascript">
+    window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance !== "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+</script>
+</body>
+
+</html>

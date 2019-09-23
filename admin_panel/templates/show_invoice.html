@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/invoice.css' %}" type="text/css">
+    <script rel="script" type="text/javascript" src="{% static 'js/admin.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <title>title</title>
+</head>
+<body>
+<div id="all">
+
+    <div class="food-header">
+        <span class="header">فاکتور</span>
+    </div>
+
+
+    <table class="invoice-table">
+        <tr>
+            <th>نام غذا</th>
+            <th>تعداد</th>
+            <th>قیمت هر واحد (تومان)</th>
+            <th>قیمت کل (تومان)</th>
+        </tr>
+        {% for item in info %}
+            <tr>
+            <td>{{ item.food_name }}</td>
+            <td>{{ item.num_food }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.t_price }}</td>
+        </tr>
+        {% endfor %}
+         <!--<tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>
+        <tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>
+        <tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>
+        <tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>
+        <tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>
+        <tr>
+            <td>پیتزا</td>
+            <td>4 عدد</td>
+            <td>160000</td>
+            <td>160000</td>
+        </tr>-->
+
+    </table>
+    <table class="invoice-table">
+        <tr>
+            <td class="bold">مجموع : </td>
+            <td class="bold"><span>{{ total_price }}</span>
+                <span>تومان</span>
+            </td>
+        </tr>
+    </table>
+
+
+    <div class="row background">
+        <button type="submit" class="btn btn-add">
+            <span>چاپ</span>
+        </button>
+        <a href="{% url 'admin-panel' %}"><button type="button"  class="btn btn-cancel">
+            <span>بازگشت</span>
+    </button></a>
+    </div>
+    </form>
+
+</div>
+</body>
+</html>

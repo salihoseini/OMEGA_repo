@@ -1,0 +1,151 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+    <p>{{ data.user_id }}</p>
+    <div class="admin-content-section">
+
+    <!-- Food management box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>نظرات تایید نشده</span>
+            </div>
+            <div class="admin-container-content">
+                {% if num_unconf %}
+            {% for comment in unconf_comments %}
+                <div id="unconf-com{{ comment.id }}" class="pos-comment">
+
+                <div class="pos-info">
+                    <div class="block avatar-block">
+                        <img class="fit-avatar circle" src="{% static 'img/avatar1.png' %}" alt="avatar">
+                    </div>
+                    <div class=" block name-block">
+                        <span class="info-text name-font">نظر </span>
+                        <span class="info-text name-font" style="color: #21ba45">{{ comment.author }}</span>
+                        <span class="info-text name-font"> در مورد</span>
+                        <span class="info-text name-font" style="color: #0D47A1">{{ comment.food }}</span>
+                    </div>
+                    <div class="block date-block" style="margin-left: 7%">
+                        <span class="info-text date-font">{{ comment.date }}</span>
+                    </div>
+                    <img onclick="comment_move_to_trash('{{ comment.id }}', '{% url 'comment_move_to_trash' %}', 'unconf', '{% url 'comments_management' %}', true)" class="garbage-img" src="{% static 'img/garbage.png' %}">
+                    <img onclick="confirm_comment('{{ comment.id }}', '{% url 'confirm_comment' %}', '{% url 'comments_management' %}')" class="garbage-img" style="left: 40px" src="{% static 'img/unblock.png' %}">
+                </div>
+                <div class="comment-content">
+                    <span class="date">{{ comment.content }}</span><br />
+                    <span class="time">{{ comment.time }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="comment-content">
+                    <span class="date">نظر تایید نشده ای وجود ندارد.</span>
+                </div>
+        {% endif %}
+                <!--<div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">نام کاربر</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">وضعیت</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">مسدود/آزاد کردن</span>
+                    </div> -->
+                </div>
+        </div>
+<!-------------------------------------------------------------------------------------->
+        <!-- online users box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>نظرات تایید شده</span>
+            </div>
+            <div class="admin-container-content">
+
+                     {% if num_conf %}
+            {% for comment in conf_comments %}
+                <div id="conf-com{{ comment.id }}" class="pos-comment">
+
+                <div class="pos-info">
+                    <div class="block avatar-block">
+                        <img class="fit-avatar circle" src="{% static 'img/avatar1.png' %}" alt="avatar">
+                    </div>
+                    <div class=" block name-block">
+                        <span class="info-text name-font">نظر </span>
+                        <span class="info-text name-font" style="color: #21ba45">{{ comment.author }}</span>
+                        <span class="info-text name-font"> در مورد</span>
+                        <span class="info-text name-font" style="color: #0D47A1">{{ comment.food }}</span>
+                    </div>
+                    <div class="block date-block" style="margin-left: 7%">
+                        <span class="info-text date-font">{{ comment.date }}</span>
+                    </div>
+                    <img onclick="comment_move_to_trash('{{ comment.id }}', '{% url 'comment_move_to_trash' %}', 'conf', '{% url 'comments_management' %}', true)" class="garbage-img" src="{% static 'img/garbage.png' %}">
+                </div>
+                <div class="comment-content">
+                    <span class="date">{{ comment.content }}</span><br />
+                    <span class="time">{{ comment.time }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="comment-content">
+                    <span class="date">نظر تایید شده ای وجود ندارد.</span>
+                </div>
+        {% endif %}
+
+            </div>
+    </div>
+
+
+
+    <div class="admin-container">
+            <div class="admin-container-header">
+                <span>زباله دان</span>
+            </div>
+            <div class="admin-container-content">
+
+                     {% if num_trash %}
+            {% for comment in trash_comments %}
+                <div id="del-com{{ comment.id }}" class="pos-comment">
+
+                <div class="pos-info">
+                    <div class="block avatar-block">
+                        <img class="fit-avatar circle" src="{% static 'img/avatar1.png' %}" alt="avatar">
+                    </div>
+                    <div class=" block name-block">
+                        <span class="info-text name-font">نظر </span>
+                        <span class="info-text name-font" style="color: #21ba45">{{ comment.author }}</span>
+                        <span class="info-text name-font"> در مورد</span>
+                        <span class="info-text name-font" style="color: #0D47A1">{{ comment.food }}</span>
+                    </div>
+                    <div class="block date-block" style="margin-left: 7%">
+                        <span class="info-text date-font">{{ comment.date }}</span>
+                    </div>
+                    <img onclick="delete_comment('{{ comment.id }}', '{% url 'delete_comment' %}', 'del', '{% url 'comments_management' %}')" class="garbage-img" style="background-color: white" src="{% static 'img/garbage.png' %}">
+                    <img onclick="recycle_comment('{{ comment.id }}', '{% url 'recycle_comment' %}', '{% url 'comments_management' %}')" class="garbage-img" style="left: 40px" src="{% static 'img/recycle.png' %}">
+                </div>
+                <div class="comment-content">
+                    <span class="date">{{ comment.content }}</span><br />
+                    <span class="time">{{ comment.time }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="comment-content">
+                    <span class="date">زباله دان خالی است.</span>
+                </div>
+        {% endif %}
+
+            </div>
+    </div>
+
+    </div>
+
+    <div class="row background" style="margin-top: 60px">
+        <a class="decoration" href="{% url 'admin-panel' %}"><button type="button"  class="btn btn-cancel" style="right: 30px">
+            <span>بازگشت</span>
+    </button></a>
+    </div>
+{% endblock content %}

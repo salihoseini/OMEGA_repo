@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!------------------------------------------------------------------------------------>
+    <!-- popup comment -->
+    <div style="display: none" id="bg-color">
+    </div>
+    <div id="popup-add-comment" class="popup-comment-box" style="display: none;">
+    <div onclick="disappear_comment_popup()" class="close-btn"><span class="close-font">&times;</span></div>
+    <div class="popup-content">
+    <span class="confirm-message">پس از خرید و صرف این غذا می توانید نظر خود در مورد آن را ثبت کنید.</span>
+    </div>
+    <!--<button onclick="disappear_comment_popup()" type="button" class="popup-button delete-confirm-button">حذف کن</button> -->
+    <button onclick="disappear_comment_popup()" type="button" class="popup-button popup-confirm-button">تایید</button>
+    </div>
+
+    <!------------------------------------------------------------------------------------------>
+
+    <span style="display: none;" id="user">{{ user }}</span>
+
+
+    <div class="all-content">
+    <!--<div id="background"> -->
+
+<!------------------------------------------------------------------------------------->
+<!-- Top Menu -->
+
+
+    <div class="top-menu menu">
+        <div class="menu-block icon-block">
+            <img src="../static/img/omega.png" class="fit-icons" alt="omega_icon">
+        </div>
+        <div class="menu-block rest-name">
+            <span id="rest-name-header" class="rest-name-font">{{ options.rest_name }}</span>
+        </div>
+        <div class="menu-block menu-icon">
+            <div onclick="showSideMenu()" class="content-icon">
+                <div class="side-menu-icon"></div>
+                <div class="side-menu-icon"></div>
+                <div class="side-menu-icon"></div>
+            </div>
+        </div>
+        <div id="side-menu-id" style="display: none" class="side-menu">
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="../static/img/search.png">
+                </div>
+                <div class="text-link">
+                    <span>جستجو</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="../static/img/about.png">
+                </div>
+                <div class="text-link">
+                    <span>درباره رستوران</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/omega-icon.png'%}">
+                </div>
+                <div class="text-link">
+                    <span>درباره اُمگا</span>
+                </div>
+            </div>
+
+            <div onclick="show_last_order('{{ user }}')" class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/omega-icon.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>مشاهده سفارشات اخیر</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="../static/img/omega-icon.jpg">
+                </div>
+                <div class="text-link">
+                    <span>تست 1 </span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="../static/img/omega-icon.jpg">
+                </div>
+                <div class="text-link">
+                    <span>تست 2</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="../static/img/omega-icon.jpg">
+                </div>
+                <div class="text-link">
+                    <span>تست 3 </span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="all-content">
+    <div id="show-order-details">
+                    {% if preparing_order %}
+                        {% for order in preparing_orders %}
+                            <div class="order">
+                            <table class="invoice-table" style="background-color: #0D47A1; color: white">
+                                <tr style="cursor: pointer" onclick="go_to_order('{{ order.order_id }}')" style="position: relative">
+                                    <th>ثبت نظر در مورد این سفارش </th>
+                                </tr>
+                            </table>
+                        <table class="invoice-table">
+                            <tr>
+                                <th>شماره فاکتور</th>
+                                <th>شماره میز</th>
+                                <th>تاریخ ثبت سفارش</th>
+                            </tr>
+                        <tr>
+                        <td>{{ order.order_id }}</td>
+                        <td>10</td>
+                        <td>
+                            <span>{{ order.date.j_day }}</span>
+                            <span>،</span>
+                            <span>{{ order.date.day }}</span>
+                            <span>{{ order.date.month }}</span>
+                            <span>{{ order.date.year }}</span><br />
+                            <span>ساعت </span>
+                            <span>{{ order.time }}</span>
+                        </td>
+                        </tr>
+                        </table>
+                         <table class="invoice-table">
+                            <tr>
+                                <th>نام غذا</th>
+                                <th>تعداد</th>
+                                <th>قیمت هر واحد (تومان)</th>
+                                <th>قیمت کل (تومان)</th>
+                            </tr>
+                            {% for item in order.foods %}
+                                <tr>
+                                <td>{{ item.food_name }}</td>
+                                <td>{{ item.num_food }}</td>
+                                <td>{{ item.price }}</td>
+                                <td>{{ item.t_price }}</td>
+                            </tr>
+                            {% endfor %}
+                         </table>
+                        <table class="invoice-table">
+                            <tr>
+                                <td class="bold">مجموع : </td>
+                                <td class="bold"><span>{{ order.price }}</span>
+                                    <span>تومان</span>
+                                </td>
+                            </tr>
+                        </table>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+</div>
+
+    <a class="pos-link" href="{% url 'Omega-project-home' %}"><div class="bottom-menu menu">
+    <span class="link-text">بازگشت به منو</span>
+    </div></a>
+     <!--</div> -->
+
+
+{% endblock content %}

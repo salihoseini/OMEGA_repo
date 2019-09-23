@@ -1,0 +1,26 @@
+.invoice-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: IranSans;
+    direction: rtl;
+    font-size: 22px;
+}
+
+.invoice-table th, .invoice-table tr, .invoice-table td{
+    border: 2px solid #333333;
+    padding: 8px;
+}
+.invoice-table td{
+    text-align: center;
+    direction: rtl;
+}
+
+.order{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+.order:first-child{
+    margin-top: 50px;
+}

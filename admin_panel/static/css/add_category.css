@@ -1,0 +1,171 @@
+@font-face {
+    font-family: "Bnazanin";
+    src: url("../fonts/Bnazanin/Bnazanin.ttf");
+    src:
+            url("../fonts/Bnazanin/Bnazanin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/BRoya/BRoya.eot') format('eot'),
+    url('../fonts/IranSans/BRoya/BRoya.woff') format('woff'),
+    url('../fonts/IranSans/BRoya/BRoya.ttf') format('truetype');
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+#all{
+    width: 700px;
+    height: auto;
+    min-height: 200px;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.food-header{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: 1px solid green;
+    background-color: #21ba45;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 60px;
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.header{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    line-height: 60px;
+}
+
+.row{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    height: auto;
+    min-height: 40px;
+    border-bottom: 1px solid #88888825;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: right;
+    direction: rtl;
+    position: relative;
+}
+
+.label-text{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 22px;
+    /*margin-left: 40px;*/
+}
+.input{
+    height: 40px;
+
+    direction: rtl;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: IranSans;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 18px;
+}
+.name-input{
+    width: 400px;
+    text-align: right;
+}
+
+.file-input{
+    font-family: Tahoma;
+    font-weight: normal;
+}
+
+.btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 3px;
+   /* position: absolute;*/
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.btn span{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+}
+.btn-add{
+    background-color: #21ba45;
+    color: white;
+    right: 20px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel{
+    background-color: red;
+    color: white;
+    right: 110px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+.btn-add:hover{
+    background-color: white;
+    color: #21ba45;
+    border: 1px solid #21ba45;
+}
+.background{
+    background-color: #21ba4525;
+}
+.pos-img{
+    width: 600px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5px;
+}
+.img-style{
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+}
+.error{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}
+.margin-right{
+    margin-right: 100px;
+}

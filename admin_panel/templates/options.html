@@ -1,0 +1,57 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+    <div class="food-header">
+        <span class="header">تنظیمات منو</span>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="pos-options">
+    <div class="option-half">
+        <div class="row">
+    <label class="label-text">نام رستوران : </label><br />
+        <input name="rest_name" type="text" value="{{ options.rest_name }}" class="input edit-name-input" />
+    </div>
+
+    <div class="row">
+        <label class="label-text">شعار رستوران : </label><br />
+        <textarea name="rest_banner" class="edit-text-area">{{ options.rest_banner }}</textarea>
+    </div>
+    </div>
+                   </div>
+    <div class="options-half">
+        <div style="height: 300px;" class="pos-img">
+        <img  class="fit-img" src="{{ options.bg_picture.url }}">
+            </div>
+        <div class="row margin-top">
+        <label class="label-text">تصویر پس زمینه منو : </label>
+        <input name="bg_img" type="file" class="input file-input" />
+    </div>
+    </div>
+       <!-- <div class="options-half">
+        <div style="height: 300px;" class="pos-img">
+        <img class="fit-img" src="{{ options.rest_logo.url }}">
+            </div>
+        <div class="row margin-top">
+        <label class="label-text">لوگوی رستوران : </label>
+        <input name="rest_logo" type="file" class="input file-input" />
+    </div>
+    </div>-->
+
+
+    <div class="row background">
+        <button type="submit" class="btn btn-add">
+            <span>ویرایش</span>
+        </button>
+        <a class="decoration" href="{% url 'admin-panel' %}"><button type="button"  class="btn btn-cancel">
+            <span>انصراف</span>
+    </button></a>
+    </div>
+    </form>
+    </div>
+
+{% endblock content %}

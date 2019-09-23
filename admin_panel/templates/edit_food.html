@@ -1,0 +1,146 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <div style="display: none" id="bg-color">
+</div>
+
+    <div id="popup-delete-category" class="delete-confirm-box" style="display: none;">
+        <div onclick="disappear_delete_cat_confirm_box()" class="close-btn"><span class="close-font">&times;</span></div>
+        <div class="popup-content">
+        <span class="confirm-message">با حذف این دسته تمامی غذاهای موجود در آن نیز حذف می شوند. از حذف این دسته مطمئن هستید؟</span>
+        </div>
+        <button onclick="delete_category_forever('{% url 'delete_category_forever' 1%}')" type="button" class="popup-button delete-confirm-button">حذف کن</button>
+        <button onclick="disappear_delete_cat_confirm_box()" type="button" class="popup-button cancel-button">انصراف</button>
+
+    </div>
+
+
+    <div class="content">
+    <div id="show-error" style="display: none" class="show-error">
+    <span class="error">لطفا خطاهایی که با رنگ قرمز مشخص شده اند را برطرف کنید.</span>
+    </div>
+    <div class="food-header">
+        <span class="header">ویرایش غذا</span>
+    </div>
+    <form name="edit_food_form" method="post" enctype="multipart/form-data" onsubmit="return edit_form_validation();" novalidate>
+        {% csrf_token %}
+    <div class="half">
+        <div class="row">
+    <label class="label-text">نام </label><span>* :</span>
+        <input onkeyup="show_or_hide_error(this, 'food-name-error', false)" name="food_name" type="text" value="{{ food.name }}" class="input edit-name-input" />
+        <span style="display: none" id="food-name-error" class="error margin-right">* لطفا نام غذا را وارد کنید.</span>
+    </div>
+    <div class="row">
+        <label class="label-text">دسته </label><span>* :</span>
+        <select id="all-categories" onchange="show_or_hide_error(this, 'category-error', false)" name="category" class="input edit-cat-input">
+            {% for category in categories %}
+                {% if food.category == category %}
+                <option selected="selected">{{ category }}</option>
+                {% else %}
+                <option>{{ category }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    <div class="margin-icons">
+        <div class="icons">
+            <a href="{% url 'add_category' %}"><img class="fit-icons" src="{% static 'img/add.svg' %}"></a>
+        </div>
+    <div class="icons">
+            <a><img onclick="get_cat_info('{% url 'edit_category' 1 %}')" class="fit-icons" src="{% static 'img/edit.png' %}"></a>
+        </div>
+    <div class="icons">
+            <a><img onclick="delete_category()" class="fit-icons" src="{% static 'img/delete.svg' %}"></a>
+        </div>
+    </div>
+    <span id="category-error" style="display: none" class="error margin-right">* لطفا دسته ای برای غذا انتخاب کنید.</span>
+    </div>
+    <div class="row">
+        <label class="label-text">قیمت </label><span>* :</span>
+        <input onkeyup="show_or_hide_error(this, 'price-error', true)" name="food_price" style="text-align: center;width: 25%" type="number" class="input edit-number-input" value="{{ food.price }}" />
+        <span id="price-error" style="display: none;margin-right: 50px;" class="error">* لطفا قیمت صحیح را وارد کنید.</span>
+    </div>
+
+    <div class="row">
+        <label class="label-text">متوسط زمان آماده شدن(بر حسب دقیقه) : </label>
+        <input name="time_to_prepare" style="width: 15%;text-align: center" type="number" class="input edit-number-input" value="{{ food.time_to_prepare }}" />
+        <br /><span class="error" style="color: #888888">در صورت خالی بودن این فیلد، این مقدار برابر 10 دقیقه در نظر گرفته خواهد شد.</span>
+    </div>
+
+    <div class="row">
+        <label class="label-text">توضیحات : </label><br />
+        <textarea name="description" class="edit-text-area">{{ food.description }}</textarea>
+    </div>
+    </div>
+    <div class="half" style="overflow-y: scroll;text-align: center">
+        <div id="all-media">
+        {% for picture in pictures %}
+        <div id="picture{{ picture.id }}" class="pos-img">
+        <div onclick="delete_picture('{% url 'delete_picture' %}', '{{ picture.id }}');"  class="delete-picture">
+            <span>&times;</span>
+        </div>
+        <img class="fit-img" src="{{ picture.picture.url }}">
+        </div>
+        <div id="pos-input{{ picture.id }}" class="row margin-top">
+        <label class="label-text">انتخاب تصویر : </label>
+        <input name="file{{ picture.id }}" type="file" class="input file-input" />
+        <span id="invalid-format-error" style="display: none" class="error margin-right">* فرمت تصویر انتخاب شده مجاز نیست. فرمت های مجاز: jpeg, jpg, png, gif</span>
+        </div>
+        {% endfor %}
+        </div>
+        <div id="pos-input{{ picture.id }}" class="row margin-top">
+        <button onclick="add_media();" class="btn-add-media" type="button">افزودن تصویر</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <label class="label-text">نظرات :</label>
+        {% if num_comments %}
+        <span id="num-comment" class="comment-info">{{ num_comments }}</span>
+        <span class="comment-info"> نظر ثبت شده است.</span>
+        {% endif %}
+        <br />
+        <div class="all-comments">
+        {% if num_comments %}
+            {% for comment in comments %}
+                <div id="edit-com{{ comment.id }}" class="pos-comment">
+
+                <div class="pos-info">
+                    <div class="block avatar-block">
+                        <img class="fit-avatar circle" src="{% static 'img/avatar1.png' %}" alt="avatar">
+                    </div>
+                    <div class=" block name-block">
+                        <span class="info-text name-font">{{ comment.author }}</span>
+                    </div>
+                    <div class="block date-block">
+                        <span class="info-text date-font">{{ comment.date }}</span>
+                    </div>
+                    <img onclick="comment_move_to_trash('{{ comment.id }}', '{% url 'comment_move_to_trash' %}', 'edit',  '/', false)" class="garbage-img" src="{% static 'img/garbage.png' %}">
+                </div>
+                <div class="comment-content">
+                    <span class="date">{{ comment.content }}</span><br />
+                    <span class="time">{{ comment.time }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="empty-comment">
+                <span>نظری ثبت نشده است.</span>
+                </div>
+        {% endif %}
+    </div>
+    </div>
+
+    <div class="row background">
+        <button type="submit" class="btn btn-add">
+            <span>ویرایش</span>
+        </button>
+        <a class="decoration" href="{% url 'all_foods' %}"><button type="button"  class="btn btn-cancel">
+            <span>انصراف</span>
+    </button></a>
+    </div>
+    </form>
+    </div>
+{% endblock content %}

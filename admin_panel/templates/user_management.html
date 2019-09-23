@@ -1,0 +1,119 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+    <p>{{ data.user_id }}</p>
+
+    <!--------------------------------------------------------------------------------------->
+    <div style="display: none" id="bg-color">
+    </div>
+
+
+    <div id="popup-delete-food" class="delete-confirm-box" style="display: none;">
+    <div onclick="cancel_deleting()" class="close-btn"><span class="close-font">&times;</span></div>
+    <div class="popup-content">
+    <br />
+    <span class="confirm-message">مدل دستگاه : </span>
+    <span id="user-info" class="confirm-message" style="font-family: Arial"></span>
+    </div>
+    <button onclick="cancel_deleting()" type="button" class="popup-button confirm-user-info">تایید</button>
+
+    </div>
+
+    <!--------------------------------------------------------------------------------------------->
+
+
+    <div class="admin-content-section">
+
+    <!-- Food management box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>همه کاربران</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">نام کاربر</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">وضعیت</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">مسدود/آزاد کردن</span>
+                    </div>
+                </div>
+                    {% for user in all_users %}
+                        <div  class="user-item">
+                           <div style="cursor: pointer" onclick="show_user_info('{{ user.user.mac_address }}')" class="user name">
+                               <img class="user-avatar" src="{% static 'img/avatar1.png' %}">
+                               <span class="user-name-text margin-right user-name">کاربر شماره </span>
+                               <span class="user-name-text user-name">{{ user.user.id }}</span>
+                               <span id="device{{ user.user.mac_address }}" style="display: none" class="user-name-text user-margin-right user-name">{{ user.agent }}</span>
+                           </div>
+                            <div class="user status">
+                                {% if user.user.online %}
+                                    <span class="user-name-text user-status">آنلاین</span>
+                                {% else %}
+                                    <span class="user-name-text user-status">آفلاین</span>
+                                {% endif %}
+                            </div>
+                            <div class="user block-user">
+                                <!--<span class=\"user-name-text\">بلاک</span>-->
+                                {% if user.user.blocked %}
+                                    <a href="{% url 'unblock_users' user.user.id %}"><input type="image" class="fit-icon"  value="delete" src="{% static 'img/unblock2.png' %}"></a>
+                                {% else %}
+                                    <a href="{% url 'block_users' user.user.id %}"><input type="image" class="fit-icon"  value="delete" src="{% static 'img/delete.svg' %}"></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+        </div>
+        </div>
+<!-------------------------------------------------------------------------------------->
+        <!-- online users box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>کاربران مسدود شده</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">نام کاربر</span>
+                   </div>
+                    <!--<div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">در حال انجام...</span>
+                    </div> -->
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">آزاد کردن</span>
+                    </div>
+                </div>
+                {% for user in all_users %}
+                    {% if user.user.blocked %}
+                    <div  class="user-item">
+                           <div style="cursor: pointer" onclick="show_user_info('{{ user.user.mac_address }}')" class="user name">
+                               <img class="user-avatar" src="{% static 'img/avatar1.png' %}">
+                               <span class="user-name-text margin-right user-name">کاربر شماره </span>
+                               <span class="user-name-text user-name">{{ user.user.id }}</span>
+                           </div>
+                            <!--<div class="user status">
+                                <span class="user-name-text user-status">سفارش غذا</span>
+                            </div> -->
+                            <div class="user block-user">
+                                <!--<span class=\"user-name-text\">بلاک</span>-->
+                                <a href="{% url 'unblock_users' user.user.id %}"><input type="image" class="fit-icon"  value="delete" src="{% static 'img/unblock2.png' %}"></a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    <div class="row background" style="margin-top: 60px">
+        <a class="decoration" href="{% url 'admin-panel' %}"><button type="button"  class="btn btn-cancel" style="right: 30px">
+            <span>بازگشت</span>
+    </button></a>
+    </div>
+{% endblock content %}

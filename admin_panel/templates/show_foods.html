@@ -1,0 +1,91 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+<div style="display: none" id="bg-color">
+</div>
+
+<div id="popup-delete-food" class="delete-confirm-box" style="display: none;">
+    <div onclick="cancel_deleting()" class="close-btn"><span class="close-font">&times;</span></div>
+    <div class="popup-content">
+    <span class="confirm-message">با حذف این غذا، تمامی نظرات و لایک های آن نیز حذف می شوند. از حذف این غذا مطمئن هستید؟</span>
+    </div>
+    <button onclick="delete_item_forever('{% url 'delete_item_forever'%}', document.getElementById('food-in-trash').innerHTML)" type="button" class="popup-button delete-confirm-button">حذف کن</button>
+    <button onclick="cancel_deleting()" type="button" class="popup-button cancel-button">انصراف</button>
+
+    </div>
+
+
+<div class="food-content">
+
+    <div class="food-header">
+        <span class="food-header-style">مدیریت غذا ها</span>
+        <div class="add-food">
+            <a href="{% url 'add_food' %}">افزودن غذا</a>
+            <span class="plus-style">+</span>
+        </div>
+    </div>
+    {% for food in foods %}
+        <div id="food{{ food.food.id }}" class="row-table">
+        <div class="block block-picture">
+            <img class="fit-picture circle" src="{{ food.picture.picture.url }}" alt="avatar">
+        </div>
+        <div class="block block-name">
+            <span>{{ food.food.name }}</span>
+        </div>
+        <div onclick="delete_item('{% url 'delete_item'%}', '{{ food.food.id }}', '{% url 'all_foods' %}')" class="left-block delete">
+            <div class="icons">
+                <input type="image" class="fit-icon" name="delete" value="delete" src="{% static 'img/garbage.png' %}">
+        </div>
+        </div>
+        <div class="left-block edit">
+            <div class="icons">
+            <a href="{% url 'edit_food' food.food.id %}"><img type="image" class="fit-icon" name="edit" src="{% static 'img/edit.png' %}"></a>
+        </div>
+        </div>
+
+        </div>
+    {% endfor %}
+</div>
+
+
+   <div class="food-content">
+    <div class="food-header">
+        <span class="food-header-style">زباله دان</span>
+    </div>
+   <span id="food-in-trash" style="display: none;"></span>
+    {% for food in trash_foods %}
+        <div id="food{{ food.food.id }}" class="row-table">
+        <div class="block block-picture">
+            <img class="fit-picture circle" src="{{ food.picture.picture.url }}" alt="avatar">
+        </div>
+        <div class="block block-name">
+            <span>{{ food.name }}</span>
+        </div>
+            <!--onclick="delete_item_forever('{% url 'delete_item_forever'%}', '{{ food.food.id }}')" -->
+        <div onclick="show_confirm_box('{{ food.food.id }}')" class="left-block delete">
+            <div class="icons">
+                <input type="image" class="fit-icon" name="delete" value="delete" src="{% static 'img/garbage.png' %}">
+        </div>
+        </div>
+        <div onclick="recycle_food('{% url 'recycle_food'%}', '{{ food.food.id }}', '{% url 'all_foods' %}')" class="left-block edit">
+            <div class="icons">
+            <img style="width: 30px;height: 30px" type="image" class="fit-icon" name="edit" src="{% static 'img/recycle.png' %}">
+        </div>
+        </div>
+
+        </div>
+
+    {% endfor %}
+</div>
+
+
+
+    <div class="row background" style="margin-top: 60px">
+        <a class="decoration" href="{% url 'admin-panel' %}"><button type="button"  class="btn btn-cancel" style="right: 30px">
+            <span>بازگشت</span>
+    </button></a>
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,534 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!------------------------------------------------------------------------------------>
+    <!-- popup comment -->
+    <div style="display: none" id="bg-color">
+    </div>
+    <div id="popup-add-comment" class="popup-comment-box" style="display: none;">
+    <div onclick="disappear_comment_popup()" class="close-btn"><span class="close-font">&times;</span></div>
+    <div class="popup-content">
+    <span id="notification-text" class="confirm-message">پس از خرید و صرف این غذا می توانید نظر خود در مورد آن را ثبت کنید.</span>
+    </div>
+    <!--<button onclick="disappear_comment_popup()" type="button" class="popup-button delete-confirm-button">حذف کن</button> -->
+    <button onclick="disappear_comment_popup()" type="button" class="popup-button popup-confirm-button">تایید</button>
+    </div>
+
+    <!------------------------------------------------------------------------------------------>
+
+    <span style="display: none;" id="user">{{ user }}</span>
+    <div id="cart-pos">
+    <div class="all-cart-content">
+    <div class="cart-content" id="cart-content">
+        {% for item in cart_info  %}
+            <div id='food{{ item.food.id }}' class="row-item">
+                    <div class="name-price-pos">
+                        <div>
+                            <span id='cart-food-name{{ item.food.id }}' class="cart-food-name">{{ item.food.name }}</span>
+                        </div>
+                        <div>
+                            <span id='food-price{{ item.food.id }}' class="cart-food-price">{{ item.food.price }}</span>
+                            <span class="cart-food-price" style="font-size: 14px;">تومان</span>
+                        </div>
+                    </div>
+                    <div class="add-sub-pos">
+                        <div id='div-cart-sub{{ item.food.id }}' class="btn sub-btn">
+                           <!-- <span id='span-cart-sub{{ item.food.id }}'>&minus;</span> -->
+                            <img id="img-cart-sub{{ item.food.id }}" src="{% static '/img/minus.png' %}" class="fit-icons">
+                            <span class='food_id' id='{{ item.food.id }}'></span>
+                        </div>
+                        <span id='numm{{ item.food.id }}' class='num-item'>{{ item.num_food }}</span>
+                        <div id='div-cart-add{{ item.food.id }}' class="btn cart-add-btn">
+                            <img id="img-cart-add{{ item.food.id }}" src="{% static '/img/add.png' %}" class="fit-icons">
+                            <span class='food_id' id='{{ item.food.id }}'></span>
+                        </div>
+                    </div>
+                    </div>
+
+        {% endfor %}
+
+   <!-- <div class="row-item">
+        <div class="name-price-pos">
+            <div>
+                <span class="cart-food-name">همبرگر مخصوص</span>
+            </div>
+            <div>
+                <span class="cart-food-price">25000</span>
+                <span class="cart-food-price" style="font-size: 14px;">تومان</span>
+            </div>
+        </div>
+        <div class="add-sub-pos">
+            <div class="btn sub-btn">
+                <span>&minus;</span>
+            </div>
+            <span class="num-item">6</span>
+            <div class="btn cart-add-btn">
+                <span>&plus;</span>
+            </div>
+        </div>
+        </div>
+        <!------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------------->
+
+    </div>
+    <div id="summary-table" class="pos-summary-table">
+        <div class="summary"><span class="option-text">مالیات</span></div>
+        <div class="value"><span class="option-text">0%</span></div>
+
+        <div class="summary"><span class="option-text">تخفیف</span></div>
+        <div class="value"><span class="option-text">0%</span></div>
+
+        <div class="summary"><span class="option-text">مجموع</span></div>
+        <div class="value"><span id="price" class="option-text">{{ cart_total }} تومان</span></div>
+    </div>
+        <div class="pos-note" id="note">
+        <textarea id="order-note" class="note" placeholder="یادداشت..."></textarea>
+            </div>
+    <div class="pos-table">
+        <span>شماره میز: </span>
+        <input id="table-number" class="table-number" type="number" />
+    </div>
+        </div>
+   <!-- <div class="confirm-btn"> -->
+        <button onclick="change_user_status('{{ user }}', 'go_to_payment')" id="confirm" type="button" class="confirm-btn">تایید و پرداخت</button>
+    <!--</div>-->
+    </div>
+    <div id="color-back">
+    <div onclick="hide_cart()" id="close-btn">
+        <span>&times;</span>
+    </div>
+    </div>
+
+
+    <div class="all-content">
+    <!--<div id="background"> -->
+
+<!------------------------------------------------------------------------------------->
+<!-- Top Menu -->
+
+
+    <div class="top-menu menu">
+        <div class="menu-block icon-block">
+            <img src="{% static 'img/omega-icon.png' %}" class="fit-icons" alt="omega_icon">
+        </div>
+        <div class="menu-block rest-name">
+            <span id="rest-name-header" style="display: none" class="rest-name-font">{{ options.rest_name }}</span>
+        </div>
+        <div class="menu-block menu-icon">
+            <div onclick="showSideMenu()" class="content-icon">
+                <div class="side-menu-icon"></div>
+                <div class="side-menu-icon"></div>
+                <div class="side-menu-icon"></div>
+            </div>
+        </div>
+        <div id="side-menu-id" style="display: none" class="side-menu">
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/search.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>جستجو</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/about.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>درباره رستوران</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/omega-icon.png'%}">
+                </div>
+                <div class="text-link">
+                    <span>درباره اُمگا</span>
+                </div>
+            </div>
+
+            <div onclick="show_last_order('{{ user }}')" class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-link-icon" src="{% static 'img/omega-icon.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>مشاهده سفارشات اخیر</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="{% static 'img/omega-icon.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>تست 1 </span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="{% static 'img/omega-icon.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>تست 2</span>
+                </div>
+            </div>
+
+            <div class="pos-link">
+                <div class="link-icon">
+                    <img class="fit-icons" src="{% static 'img/omega-icon.png' %}">
+                </div>
+                <div class="text-link">
+                    <span>تست 3 </span>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div id="cat-names" style="display: none" class="scrollmenu">
+            {% for category in categories %}
+            <div onclick="show_foods('{{ category.name }}')" class="cat-name">
+                    <span>{{ category.name }}</span>
+                </div>
+            {% endfor %}
+</div>
+    </div>
+
+<!---------------------------------------------------------------------------------------->
+<!-- Rest information and rest caption -->
+    <div id="pos-background" class="pos-background">
+    <div class="background-img">
+        <img class="fit-back-img" src="{{ options.bg_picture.url }}">
+    </div>
+
+    <div class="rest-info">
+        <div  class="rest-name-bold">
+            <span id="rest-name-bold">{{ options.rest_name }}</span>
+        </div>
+        <div class="rest-caption">
+            <span>{{ options.rest_banner }}</span>
+        </div>
+    <!--<div class="pos-rating">
+    <div class="rating">
+        <span id="rest-score"  style="display: none">4</span>
+        <span id="star5">☆</span><span id="star4">☆</span><span id="star3">☆</span><span id="star2">☆</span><span id="star1">☆</span>
+    </div>
+    </div> -->
+    </div>
+
+<!----------------------------------------------------------------------------------------->
+<!-- Categories -->
+
+    <div class="pos-categories">
+        <!--{% for category in categories %}
+        <div onclick="show_foods('{{ category.name }}')" class="category">
+            <img class="fit-icons" style="border-radius: 5px;" src={{ category.picture.url }}>
+            <div  class="category-back">
+                <span class="category-name">{{ category.name }}</span> <br />
+           </div>
+        </div>
+        {% endfor %} -->
+
+
+    <div  class="carousel-cat carousel-main" data-flickity='{ "lazyLoad": true }'>
+               {% for category in categories %}
+                   <div class="carousel-cell-cat">
+        <img class="carousel-cell-image fit-icons"
+        data-flickity-lazyload="{{ category.picture.url }}" alt="tulip" />
+    </div>
+               {% endfor %}
+
+</div>
+
+    </div>
+
+
+
+
+    </div>
+
+<!------------------------------------------------------------------------------------------>
+<!-- End of background picture -->
+
+</div>
+
+<!------------------------------------------------------------------------------------------>
+
+    <div class="all-content">
+    {% for category in categories %}
+        <div id="{{ category.name }}">
+        <div class="category-header">
+            <span>{{ category.name }}</span>
+        </div>
+    {% for post in posts %}
+        {% if post.food.category == category %}
+
+
+<!--
+            <div onclick="show_food('{{ post.food.id }}')" class="pos-food">
+                <div class="pos-food-img">
+                    <img class="fit-icons radius-border" src="{{ post.food_picture.picture.url }}">
+                </div>
+                <div class="pos-name">
+                    <span class="name-text">{{ post.food.name }}</span>
+                    <br />
+                    <span class="name-text">{{ post.food.price }}</span>
+                    <span class="name-text">تومان</span>
+                </div>
+
+            </div>
+
+-->
+<!------------------------------------------------------------------------------------------>
+<!-- Post -->
+
+
+
+
+
+    <div  class="container">
+    <div class="disable-dbl-tap-zoom pos-img">
+
+
+    <div id="like-middle">
+            <div class="like" id="anim{{ post.food.id }}"></div>
+    </div>
+            <span style="display: none" id="is_liked{{ post.food.id }}">{{ post.liked }}</span>
+
+
+    <div class="top-shadow-container">
+        <div class="title-block title-name-block">
+                    <span id="food-name{{ post.food.id }}" class="food-name">{{ post.food.name }}</span>
+                </div>
+                <div class="title-block title-price">
+                    <span id="price{{ post.food.id }}" class="price-text">{{ post.food.price }}</span>
+                    <span class="price-text" style="font-size: 14px;">تومان</span>
+                </div>
+    </div>
+    <div id="food{{ post.food.id }}" class="carousel carousel-main" data-flickity='{ "lazyLoad": true }'>
+               {% for pic in post.food_pictures %}
+                   <div class="carousel-cell">
+        <img id="dbl-like{{ post.food.id }}" class="carousel-cell-image fit-icons"
+        data-flickity-lazyload="{{ pic.picture.url }}" alt="tulip" />
+    </div>
+               {% endfor %}
+
+</div>
+        <div class="bottom-shadow-container">
+            <div id="post-footer{{ post.food.id }}" class="post-footer">
+             <div id="div-add{{ post.food.id }}" class="cart-option right-align">
+                        <img id="img-add{{ post.food.id }}" src="{% static 'img/add.png'%}" class="fit-icons" />
+                    </div>
+                    {% if post.num_food %}
+                    <div class="cart-option right-align number-font" style="display: block" id="pos-num{{post.food.id}}">
+                        <span id="num{{post.food.id}}">{{ post.num_food }}</span>
+                    </div>
+                    <div id="div-sub{{ post.food.id }}"  class="cart-option right-align" style="display: block">
+                        <img id="img-sub{{ post.food.id }}" src="{% static 'img/minus.png'%}" class="fit-icons" />
+                    </div>
+
+
+                    {% else %}
+                    <div class="cart-option right-align number-font" id="pos-num{{post.food.id}}">
+                        <span id="num{{post.food.id}}">0</span>
+                    </div>
+                    <div id="div-sub{{ post.food.id }}" class="cart-option right-align" style="display: none;">
+                        <img id="img-sub{{ post.food.id }}" src="{% static 'img/minus.png'%}" class="fit-icons" />
+                    </div>
+
+
+                    {% endif %}
+
+                    <div class="like-com-desc">
+                        <div class="pos-option like-icon-margin">
+                            {% if post.liked %}
+                            <img  name="is_liked" id="img-like{{ post.food.id }}" class="fit-icons" src="../static/img/like2.png" alt="like_icon">
+                            {% else %}
+                            <img name="not_liked" id="img-like{{ post.food.id }}" class="fit-icons" src="../static/img/like.png" alt="like_icon">
+                            {% endif %}
+                        </div>
+                        <div class="pos-num">
+                            <span id="num-like{{ post.food.id }}">{{ post.num_likes }}</span>
+                        </div>
+                        <div class="pos-option comment-icon-margin">
+                            <img onclick="comments('{{ post.food.id }}')" class="fit-icons" src="{% static 'img/comment.png' %}" alt="comment_icon">
+                        </div>
+                        <div class="pos-num">
+                            {% if post.num_comments %}
+                            <span>{{ post.num_comments }}</span>
+                            {% else %}
+                            <span>0</span>
+                            {% endif %}
+                        </div>
+
+                    </div>
+            <div onclick="show_or_hide_description('{{ post.food.id }}')" class="pos-description-icon">
+                <div class="description-icon">
+                    <img class="fit-icons" src="{% static 'img/details.png' %}">
+                </div>
+                <span class="description-text">توضیحات</span>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    </div>
+
+    <div id="all-desc{{ post.food.id }}" class="all-description" style="display: none">
+            <span id="all-description-text{{ post.food.id }}" class="description">{{ post.food.description }}</span>
+        </div>
+
+
+    <div class="pos-comments" style="display: none" id="pos-com{{ post.food.id }}">
+        <div class="comment-des-pos-content" style="display: none" id="com{{ post.food.id }}">
+        {% if post.num_comments %}
+            {% for comment in post.comments %}
+            <div class="row">
+
+                <div class="pos-info">
+                    <div class="block avatar-block">
+                        <img class="fit-icons circle" src="{% static 'img/avatar1.png' %}" alt="avatar">
+                    </div>
+                    <div class=" block name-block">
+                        <span class="info-text name-font">{{ comment.author }}</span>
+                    </div>
+                    <div class="block date-block">
+                        <span class="info-text date-font">{{ comment.date }}</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <span class="date">{{ comment.content }}</span><br />
+                    <span class="time">{{ comment.time }}</span>
+                </div>
+            </div>
+
+            {% endfor %}
+            {% else %}
+                <div class="empty-comment">
+                <span>نظری ثبت نشده است.</span>
+                </div>
+            {% endif %}
+            <div onclick="add_comment('پس از خرید و صرف این غذا می توانید نظر خود را ثبت کنید.')" class="add-comment-btn">
+                <span>افزودن نظر</span>
+            </div>
+        </div>
+    </div>
+
+
+
+<!------------------------------------------------------------------------------------------>
+<!-- Pos_comments -->
+
+
+        </div>
+
+
+
+<!----------------------------------------------------------------------------------------->
+<!-- End of Posts -->
+        {% endif %}
+    {% endfor %}
+        </div>
+
+
+
+
+
+    {% endfor %}
+
+<!----------------------------------------------------------------------------------------->
+<!-- posts contents -->
+
+    </div>
+
+<!---------------------------------------------------------------------------------------->
+<!-- Bottom Menu -->
+
+    <div class="bottom-menu menu">
+
+<!------------------------------------------------------------------------------------------>
+<!-- Shopping Cart -->
+
+        <div onclick="show_cart('{{ user }}' , '{% url 'get_cart_info' %}')" class="menu-block cart-icon">
+            <img src="../static/img/cart2.png" class="fit-cart" alt="shopping-cart">
+            <span id="cart-price" class="total-price">{{ cart_total }}</span>
+            <span class="unit">تومان</span>
+        </div>
+
+<!----------------------------------------------------------------------------------------->
+
+    </div>
+     <!--</div> -->
+
+
+
+<script type="text/javascript">
+
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
+    });
+
+    window.onresize = function () {
+        var pos_background = document.getElementById("pos-background");
+    var height = 0;
+    var body = window.document.body;
+    if (window.innerHeight) {
+        height = window.innerHeight;
+    }
+    else if (body.parentElement.clientHeight) {
+        height = body.parentElement.clientHeight;
+    }
+    else if (body && body.clientHeight) {
+        height = body.clientHeight;
+    }
+    pos_background.style.height = ((height - pos_background.offsetTop) + "px");
+
+    };
+    window.onscroll = function(){scroll_function()};
+    function scroll_function() {
+
+        if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+            document.getElementById("cat-names").style.display = "block";
+        }
+
+        else {
+            document.getElementById("cat-names").style.display = "none";
+        }
+
+
+        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+            document.getElementById("rest-name-bold").style.fontSize = "0";
+            document.getElementById("rest-name-header").style.display = "block";
+            /*document.getElementById("rest-name-header").classList.add("font-size-animation");*/
+        }
+        else{
+            var font_size = 50;
+            if(50 - parseInt(document.documentElement.scrollTop) / 2 > 35) {
+                font_size = 50 - parseInt(document.documentElement.scrollTop) / 2;
+            }
+            else {
+                font_size = 35;
+            }
+            document.getElementById("rest-name-bold").style.fontSize = font_size + "px";
+            document.getElementById("rest-name-header").style.display = "none";
+            /*document.getElementById("rest-name-header").classList.remove("font-size-animation");*/
+        }
+
+    }
+
+</script>
+
+{% endblock content %}

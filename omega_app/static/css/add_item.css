@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/BRoya/BRoya.eot') format('eot'),
+    url('../fonts/IranSans/BRoya/BRoya.woff') format('woff'),
+    url('../fonts/IranSans/BRoya/BRoya.ttf') format('truetype');
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.header{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+#all{
+    width: 80%;
+    height: auto;
+    min-height: 200px;
+    background-color: white;
+   /* box-shadow: 0 2px 4px 0 #333333;*/
+    border: 2px dashed #333333;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 2.5%;
+}
+
+.row{
+    width: 95%;
+    height: auto;
+    min-height: 40px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 2%;
+    text-align: right;
+    direction: rtl;
+    position: relative;
+    background-color: #21ba4525;
+}
+.row-center{
+    text-align: center;
+}
+.label-text{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 40px;
+}
+.input{
+    height: 40px;
+
+    direction: rtl;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: IranSans;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 18px;
+}
+.name-input{
+    width: 40%;
+    text-align: right;
+    padding: 1%;
+}
+.cat-input{
+    width: 20%;
+    text-align: center;
+}
+.number-input{
+    width: 15%;
+    font-size: 20px;
+}
+
+.text-area{
+    width: 50%;
+    height: 200px;
+    direction: rtl;
+    text-align: right;
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 1%;
+    resize: none;
+}
+.file-input{
+    font-family: Tahoma;
+    font-weight: normal;
+}
+
+.btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 3px;
+   /* position: absolute;*/
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.btn span{
+    font-family: IranSans;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+}
+.btn-add{
+    background-color: #21ba45;
+    color: white;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel{
+    background-color: red;
+    color: white;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.btn-cancel:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+.btn-add:hover{
+    background-color: white;
+    color: #21ba45;
+    border: 1px solid #21ba45;
+}
+.fit-icons{
+    width: 15px;
+    height: 15px;
+}
+.icons{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline;
+}
+.margin-icons{
+    display: inline;
+    margin-right: 20px;
+}
+
+.opacity{
+    opacity: 0.6;
+    cursor: auto;
+}
+
+@media screen and (max-width: 800px){
+    #all{
+        width: 90%;
+    }
+    .name-input{
+        width: 80%;
+    }
+    .cat-input{
+        width: 30%;
+    }
+    .number-input{
+        width: 25%;
+    }
+    .text-area{
+        width: 80%;
+    }
+
+}

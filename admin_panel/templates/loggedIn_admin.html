@@ -1,0 +1,228 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block content %}
+    <p>{{ data.user_id }}</p>
+
+    <!--------------------------------------------------------------------------------------->
+    <div style="display: none" id="bg-color">
+    </div>
+
+
+    <div id="popup-delete-food" class="delete-confirm-box" style="display: none;">
+    <div onclick="cancel_deleting()" class="close-btn"><span class="close-font">&times;</span></div>
+    <div class="popup-content">
+    <br />
+    <span class="confirm-message">مدل دستگاه : </span>
+    <span id="user-info" class="confirm-message" style="font-family: Arial"></span>
+    </div>
+    <button onclick="cancel_deleting()" type="button" class="popup-button confirm-user-info">تایید</button>
+
+    </div>
+
+    <!--------------------------------------------------------------------------------------------->
+
+    <div class="admin-options">
+        <div class="setting-admin-option">
+            <a style="text-decoration: none " href="{% url 'all_foods' %}"><div style="background-color: #0D47A1" class="option-content">
+                <div class="option-title">
+                    <span class="option-title-text">مدیریت غذا ها</span><br />
+                    <img class="option-title-img" width="50" height="50" src="{% static 'img/food.png' %}">
+                </div>
+            </div></a>
+        </div>
+        <div class="setting-admin-option">
+            <a style="text-decoration: none " href="{% url 'options'  %}"><div style="background-color: #21ba45" class="option-content">
+                <div class="option-title">
+                   <span class="option-title-text">تنظیمات منو</span><br />
+                    <img class="option-title-img" width="50" height="50" src="{% static 'img/settings.png' %}">
+                </div>
+            </div></a>
+        </div>
+        <div class="setting-admin-option">
+            <a style="text-decoration: none " href="{% url 'users_management' %}"><div style="background-color: #f9a825" class="option-content">
+                <div class="option-title">
+                    <span class="option-title-text">مدیریت کاربران</span><br />
+                    <img class="option-title-img" width="50" height="50" src="{% static 'img/user-management.png' %}">
+                </div>
+            </div></a>
+        </div>
+        <div class="setting-admin-option">
+            <a style="text-decoration: none " href="{% url 'comments_management' %}"><div style="background-color: #dc3545" class="option-content">
+                <div class="option-title">
+                    <span class="option-title-text">مدیریت نظرات</span><br />
+                    <img class="option-title-img" width="50" height="50" src="{% static 'img/comments-management.png' %}">
+                </div>
+            </div></a>
+        </div>
+    </div>
+
+
+    <div class="admin-half">
+    <div class="admin-content-section">
+
+    <!-- Food management box -->
+<!--
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>مدیریت</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                    <a class="decoration" href="{% url 'all_foods' %}"><span class="item-text">مدیریت غذا ها</span></a>
+                </div>
+                 <div class="item">
+                    <a class="decoration" href="#"><span class="item-text">تنظیمات منو</span></a>
+                </div>
+                <div class="item">
+                    <a class="decoration" href="{% url 'users_management' %}"><span class="item-text">مدیریت کاربران</span></a>
+                </div>
+                <div class="item">
+                    <a class="decoration" href="{% url 'comments_management' %}"><span class="item-text">نظرات کاربران</span></a>
+                </div>
+            </div>
+        </div> -->
+<!-------------------------------------------------------------------------------------->
+        <!-- online users box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <span>کاربران آنلاین</span>
+            </div>
+            <div class="admin-container-content">
+                <div class="item">
+                   <div class="user name">
+                       <span class="user-name-text" style="font-weight: bold">نام کاربر</span>
+                   </div>
+                    <div class="user status">
+                        <span class="user-name-text" style="font-weight: bold">در حال انجام...</span>
+                    </div>
+                    <div class="user block-user">
+                        <span class="user-name-text" style="font-weight: bold">مسدود کردن</span>
+                    </div>
+                </div>
+
+
+                <div id="all-online-users">
+                {% if online_users_exist %}
+                    {% for online_user in online_users %}
+                        <div id="user{{ online_user.user_name }}" class="user-item">
+                           <div onclick="show_user_info('{{ online_user.user_name }}')" style="cursor: pointer" class="user name">
+                               <img class="user-avatar" src="../static/img/avatar1.png">
+                               {% if online_user.name %}
+                                   <span id="{{ online_user.user_name }}" class="user-name-text user-margin-right user-name">{{ online_user.name }}</span>
+                               {% else %}
+                               <span class="user-name-text user-margin-right user-name">کاربر شماره </span>
+                               <span id="{{ online_user.user_name }}" class="user-name-text user-name">{{ online_user.user_id }}</span>
+                               {% endif %}
+                               <span id="device{{ online_user.user_name }}" style="display: none" class="user-name-text user-margin-right user-name">{{ online_user.device_name }}</span>
+                           </div>
+                            <div class="user status">
+                                <span id="{{ online_user.user_name }}status" class="user-name-text user-status">{{ online_user.status }}</span>
+                            </div>
+                            <div class="user block-user">
+                                <!--<span class=\"user-name-text\">بلاک</span>-->
+                                <input onclick="add_to_block_user('{{ online_user.user_name }}')" type="image" class="fit-icon"  value="delete" src="../static/img/delete.svg">
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    </div>
+
+            </div>
+        </div>
+
+    <!---------------------------------------------------------------------------------------->
+      <!-- order box -->
+
+        <div class="admin-container">
+            <div class="admin-container-header">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="color: white;font-family: IranSans;font-size: 18px;text-align: right">سفارشات</td>
+                        <td style="text-align: center">
+                            <span>مشاهده سفارشات</span>
+                            <select class="select-order">
+                                <option>یک ساعت پیش</option>
+                                <option>امروز</option>
+                                <option>این ماه</option>
+                                <option>این سال</option>
+                            </select>
+                        </td>
+                        <td style="text-align: left;">
+                            <a class="decoration link-color" href="{% url "all_orders" %}">مشاهده همه سفارشات</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                {% if order_exist %}
+              <!--  <div id="pos-order{{ order.order_id }}" class="order-item" style="direction: rtl">
+                    <div class="user name">
+                    <span class="user-name-text">میز شماره</span>
+                    <span class="user-name-text" style="color: #0D47A1; font-weight: bold">{{ order.table_number }}</span>
+                    <span class="user-name-text" style="font-weight: bold;font-size: 24px ">،</span>
+                    <span class="user-name-text">{{ order.total_price }}</span>
+                    <span class="user-name-text">تومان</span>
+                    <span class="user-name-text" style="font-weight: bold;font-size: 24px ">،</span>
+                    </div>
+                    <div class="user status">
+                        <span class="user-name-text user-status">پرداخت شده</span>
+                    </div>
+                    <div class="details">
+                        <a class="decoration" href="#"><span class="item-text">مشاهده جزییات</span></a>
+                    </div>
+
+                    </div> -->
+                    <div class="admin-container-content">
+
+                        <table id="all-orders" class="admin-order">
+                        <tr>
+                            <th style="text-align: right">خلاصه سفارش</th>
+                            <th>وضعیت</th>
+                            <th>جزئیات</th>
+                        </tr>
+                        {% for order in orders %}
+                            <tr id="{{ order.order_id }}">
+                            <td style="text-align: right">
+                                <span>میز شماره </span>
+                                <span>{{ order.table_number }}</span>
+                                <span> ، </span>
+                                <span>{{ order.total_price }}</span>
+                                <span> تومان</span>
+                            </td>
+                            <td>پرداخت شده</td>
+                            <td>
+                                <a class="admin-text-link" href="{% url 'show_invoice' order_id=order.order_id %}">مشاهده جزئیات</a>
+                            </td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                {% endif %}
+        </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-half">
+    <div class="admin-content-section">
+        <div class="pos-chart">
+        <span style="font-family: IranSans; font-size: 18px;font-weight: bold">نوع نمودار : </span>
+        <select class="select-option" id="chart-type" onchange="update_chart();">
+            <option>دایره ای</option>
+            <option>ستونی</option>
+            <option>خطی</option>
+        </select>
+        <button onclick="update_chart();" class="refresh-btn">به روز رسانی نمودار</button>
+        <br /><br /><br />
+    <canvas id="myChart" style="width: 100%; height: 300px;"></canvas>
+    <canvas id="canvas" style="width: 100%; height: 300px;"></canvas>
+
+<script>
+    var chart_type = change_chart_type(document.getElementById('chart-type'));
+    window.onload = get_data(chart_type);
+   // draw_chart();
+</script>
+            </div>
+</div>
+    </div>
+<script src="{% static 'js/ajax_call.js' %}"></script>
+{% endblock content %}

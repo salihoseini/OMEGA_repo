@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/food_management.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/add_item.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/edit_item.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/options.css' %}" type="text/css">
+    <script rel="script" type="text/javascript" src="{% static 'js/admin.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/moment-jalali.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/chart.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+    <script rel="script" type="text/javascript" src="{% static 'js/draw-chart.js' %}"></script>
+
+
+    <title>title</title>
+</head>
+<body style="background-size: cover;background-position: center;background-image: url('{% static 'img/back.jpg' %}')">
+<div class="pos-nav">
+    <div class="topnav" id="myTopnav">
+        <a href="{% url 'admin-logout' %}">خروج</a>
+        <a href="javascript:redirect();">مشاهده سایت</a>
+        <a href="#">تغییر رمز عبور</a>
+        <a style="float: left; background-color: #fbfbfb;color: #21ba45;" href="#">پنل مدیریت</a>
+    </div>
+</div>
+
+{% block content %} {% endblock %}
+<script type="text/javascript">
+    window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance !== "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+</script>
+</body>
+</html>
